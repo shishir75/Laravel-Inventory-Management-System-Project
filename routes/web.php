@@ -26,6 +26,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['as'=>'admin.', 'prefix' => 'admin', 'middleware' => 'auth' ], function(){
 
     Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+    Route::resource('employee', 'EmployeeController');
 
 
 });

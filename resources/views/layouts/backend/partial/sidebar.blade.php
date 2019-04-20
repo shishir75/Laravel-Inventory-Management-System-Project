@@ -23,16 +23,16 @@
 			<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 				<!-- Add icons to the links using the .nav-icon class
 					 with font-awesome or any other icon font library -->
-				<li class="nav-item has-treeview ">
-					<a href="#" class="nav-link active">
+				<li class="nav-item has-treeview">
+					<a href="{{ route('admin.dashboard') }}" class="nav-link {{ Request::is('admin/dashboard') ? 'active' : '' }}">
 						<i class="nav-icon fa fa-dashboard"></i>
 						<p>
 							Dashboard
 						</p>
 					</a>
 				</li>
-				<li class="nav-item has-treeview">
-					<a href="#" class="nav-link">
+				<li class="nav-item has-treeview {{ Request::is('admin/employee*') ? 'menu-open' : '' }}">
+					<a href="#" class="nav-link {{ Request::is('admin/employee*') ? 'active' : '' }}">
 						<i class="nav-icon fa fa-pie-chart"></i>
 						<p>
 							Employee
@@ -41,13 +41,13 @@
 					</a>
 					<ul class="nav nav-treeview">
 						<li class="nav-item">
-							<a href="" class="nav-link">
+							<a href="{{ route('admin.employee.create') }}" class="nav-link {{ Request::is('admin/employee/create') ? 'active' : '' }}">
 								<i class="fa fa-circle-o nav-icon"></i>
 								<p>Add Employee</p>
 							</a>
 						</li>
 						<li class="nav-item">
-							<a href="" class="nav-link">
+							<a href="{{ route('admin.employee.index') }}" class="nav-link {{ Request::is('admin/employee') ? 'active' : '' }}">
 								<i class="fa fa-circle-o nav-icon"></i>
 								<p>All Employee</p>
 							</a>
