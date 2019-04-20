@@ -31,14 +31,6 @@
 						</p>
 					</a>
 				</li>
-				<li class="nav-item">
-					<a href="pages/widgets.html" class="nav-link">
-						<i class="nav-icon fa fa-th"></i>
-						<p>
-							Widgets
-						</p>
-					</a>
-				</li>
 				<li class="nav-item has-treeview">
 					<a href="#" class="nav-link">
 						<i class="nav-icon fa fa-pie-chart"></i>
@@ -49,13 +41,13 @@
 					</a>
 					<ul class="nav nav-treeview">
 						<li class="nav-item">
-							<a href="pages/charts/chartjs.html" class="nav-link">
+							<a href="" class="nav-link">
 								<i class="fa fa-circle-o nav-icon"></i>
 								<p>Add Employee</p>
 							</a>
 						</li>
 						<li class="nav-item">
-							<a href="pages/charts/flot.html" class="nav-link">
+							<a href="" class="nav-link">
 								<i class="fa fa-circle-o nav-icon"></i>
 								<p>All Employee</p>
 							</a>
