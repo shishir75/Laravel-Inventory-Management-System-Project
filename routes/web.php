@@ -27,6 +27,7 @@ Route::group(['as'=>'admin.', 'prefix' => 'admin', 'middleware' => 'auth' ], fun
 
     Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
     Route::resource('employee', 'EmployeeController');
+    Route::resource('customer', 'CustomerController');
 
 
 });

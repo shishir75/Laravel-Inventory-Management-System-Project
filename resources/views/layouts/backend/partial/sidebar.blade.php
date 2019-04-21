@@ -54,6 +54,29 @@
 						</li>
 					</ul>
 				</li>
+				<li class="nav-item has-treeview {{ Request::is('admin/customer*') ? 'menu-open' : '' }}">
+					<a href="#" class="nav-link {{ Request::is('admin/customer*') ? 'active' : '' }}">
+						<i class="nav-icon fa fa-pie-chart"></i>
+						<p>
+							Customer
+							<i class="right fa fa-angle-left"></i>
+						</p>
+					</a>
+					<ul class="nav nav-treeview">
+						<li class="nav-item">
+							<a href="{{ route('admin.customer.create') }}" class="nav-link {{ Request::is('admin/customer/create') ? 'active' : '' }}">
+								<i class="fa fa-circle-o nav-icon"></i>
+								<p>Add Customer</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="{{ route('admin.customer.index') }}" class="nav-link {{ Request::is('admin/customer') ? 'active' : '' }}">
+								<i class="fa fa-circle-o nav-icon"></i>
+								<p>All Customer</p>
+							</a>
+						</li>
+					</ul>
+				</li>
 
 				<li class="nav-header">MENU</li>
 				<li class="nav-item">
