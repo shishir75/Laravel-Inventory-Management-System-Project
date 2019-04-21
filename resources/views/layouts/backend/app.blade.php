@@ -19,6 +19,10 @@
 	<!-- Google Font: Source Sans Pro -->
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
+	<link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
+
+	<link rel="icon" href="{{ asset('assets/backend/img/policymaker.ico') }}" type="image/x-icon" />
+
 	@stack('css')
 
 </head>
@@ -49,6 +53,20 @@
 <script src="{{ asset('assets/backend/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- AdminLTE -->
 <script src="{{ asset('assets/backend/js/adminlte.js') }}"></script>
+
+<script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+{!! Toastr::message() !!}
+
+<script>
+	@if($errors->any())
+	@foreach($errors->all() as $error)
+	toastr.error('{{ $error }}', 'Error!!', {
+		closeButton:true,
+		progressBar:true,
+	});
+	@endforeach
+	@endif
+</script>
 
 @stack('js')
 
