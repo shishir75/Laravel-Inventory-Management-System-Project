@@ -1,6 +1,6 @@
 @extends('layouts.backend.app')
 
-@section('title', 'Create Employee')
+@section('title', 'Update Employee')
 
 @push('css')
 
@@ -17,7 +17,7 @@
                     <div class="col-sm-6 offset-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Create Employee</li>
+                            <li class="breadcrumb-item active">Update Employee</li>
                         </ol>
                     </div>
                 </div>
@@ -33,41 +33,42 @@
                         <!-- general form elements -->
                         <div class="card card-primary">
                             <div class="card-header">
-                                <h3 class="card-title">Create Employee</h3>
+                                <h3 class="card-title">Update Employee</h3>
                             </div>
                             <!-- /.card-header -->
 
                             <!-- form start -->
-                            <form role="form" action="{{ route('admin.employee.store') }}" method="post" enctype="multipart/form-data">
+                            <form role="form" action="{{ route('admin.employee.update', $employee->id) }}" method="post" enctype="multipart/form-data">
                                 @csrf
+                                @method('PUT')
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Name</label>
-                                                <input type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Enter Name">
+                                                <input type="text" class="form-control" name="name" value="{{ $employee->name }}" placeholder="Enter Name">
                                             </div>
                                             <div class="form-group">
                                                 <label>Email</label>
-                                                <input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Enter Email">
+                                                <input type="email" class="form-control" name="email" value="{{ $employee->email }}"  placeholder="Enter Email">
                                             </div>
                                             <div class="form-group">
                                                 <label>Phone</label>
-                                                <input type="text" class="form-control" name="phone" value="{{ old('phone') }}" placeholder="Enter Phone">
+                                                <input type="text" class="form-control" name="phone" value="{{ $employee->phone }}" placeholder="Enter Phone">
                                             </div>
                                             <div class="form-group">
                                                 <label>Address</label>
-                                                <input type="text" class="form-control" name="address" value="{{ old('address') }}" placeholder="Enter Address">
+                                                <input type="text" class="form-control" name="address" value="{{ $employee->address }}" placeholder="Enter Address">
                                             </div>
                                             <div class="form-group">
                                                 <label>City</label>
-                                                <input type="text" class="form-control" name="city" value="{{ old('city') }}" placeholder="Enter City">
+                                                <input type="text" class="form-control" name="city" value="{{ $employee->city }}" placeholder="Enter City">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Experience</label>
-                                                <input type="text" class="form-control" name="experience" value="{{ old('experience') }}" placeholder="Enter Experience">
+                                                <input type="text" class="form-control" name="experience" value="{{ $employee->experience }}" placeholder="Enter Experience">
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputFile">Photo</label>
@@ -77,18 +78,21 @@
                                                         <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                                                     </div>
                                                 </div>
+                                                <p class="mt-2">
+                                                    <img width="50" height="50" src="{{ URL::asset("storage/employee/".$employee->photo) }}" alt="{{ $employee->name }}">
+                                                </p>
                                             </div>
                                             <div class="form-group">
                                                 <label>NID No</label>
-                                                <input type="text" class="form-control" name="nid_no" value="{{ old('nid_no') }}" placeholder="Enter NID No">
+                                                <input type="text" class="form-control" name="nid_no" value="{{ $employee->nid_no }}" placeholder="Enter NID No">
                                             </div>
                                             <div class="form-group">
                                                 <label>Salary</label>
-                                                <input type="text" class="form-control" name="salary" value="{{ old('salary') }}" placeholder="Enter Salary">
+                                                <input type="text" class="form-control" name="salary" value="{{ $employee->salary }}" placeholder="Enter Salary">
                                             </div>
                                             <div class="form-group">
                                                 <label>Vacation</label>
-                                                <input type="text" class="form-control" name="vacation" value="{{ old('vacation') }}" placeholder="Enter Vacation">
+                                                <input type="text" class="form-control" name="vacation" value="{{ $employee->vacation }}" placeholder="Enter Vacation">
                                             </div>
                                         </div>
                                     </div>
@@ -97,7 +101,7 @@
                                 <!-- /.card-body -->
 
                                 <div class="card-footer">
-                                    <button type="submit" class="btn btn-primary float-md-right">Create Employee</button>
+                                    <button type="submit" class="btn btn-primary float-md-right">Update Employee</button>
                                 </div>
                             </form>
                         </div>
