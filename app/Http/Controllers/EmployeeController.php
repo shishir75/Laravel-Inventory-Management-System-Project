@@ -34,7 +34,12 @@ class EmployeeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $inputs = $request->except('_token');
+        $rules = [
+            'name' => 'required | min:3',
+            'email' => 'required| email | unique:employees',
+            ''
+        ];
     }
 
     /**

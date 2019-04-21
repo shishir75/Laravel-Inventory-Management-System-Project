@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/laravel-cashier.iml" filepath="$PROJECT_DIR$/.idea/laravel-cashier.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/starter-single-auth.iml" filepath="$PROJECT_DIR$/.idea/starter-single-auth.iml" />
     </modules>
   </component>
 </project>
