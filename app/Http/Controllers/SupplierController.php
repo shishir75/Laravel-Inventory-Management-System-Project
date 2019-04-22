@@ -126,7 +126,63 @@ class SupplierController extends Controller
      */
     public function update(Request $request, Supplier $supplier)
     {
-        //
+        $inputs = $request->except('_token');
+        $rules = [
+            'name' => 'required | min:3',
+            'email' => 'required| email',
+            'phone' => 'required',
+            'address' => 'required',
+            'city' => 'required',
+            'photo' => 'image',
+            'type' => 'required | integer',
+        ];
+
+        $validation = Validator::make($inputs, $rules);
+        if ($validation->fails())
+        {
+            return redirect()->back()->withErrors($validation)->withInput();
+        }
+
+        $image = $request->file('photo');
+        $slug =  Str::slug($request->input('name'));
+        if (isset($image))
+        {
+            $currentDate = Carbon::now()->toDateString();
+            $imageName = $slug.'-'.$currentDate.'-'.uniqid().'.'.$image->getClientOriginalExtension();
+            if (!Storage::disk('public')->exists('supplier'))
+            {
+                Storage::disk('public')->makeDirectory('supplier');
+            }
+
+            // delete old photo
+            if (Storage::disk('public')->exists('supplier/'. $supplier->photo))
+            {
+                Storage::disk('public')->delete('supplier/'. $supplier->photo);
+            }
+
+            $postImage = Image::make($image)->resize(480, 320)->stream();
+            Storage::disk('public')->put('supplier/'.$imageName, $postImage);
+        } else
+        {
+            $imageName = $supplier->photo;
+        }
+
+        $supplier->name = $request->input('name');
+        $supplier->email = $request->input('email');
+        $supplier->phone = $request->input('phone');
+        $supplier->address = $request->input('address');
+        $supplier->city = $request->input('city');
+        $supplier->type = $request->input('type');
+        $supplier->shop_name = $request->input('shop_name');
+        $supplier->account_holder = $request->input('account_holder');
+        $supplier->account_number = $request->input('account_number');
+        $supplier->bank_name = $request->input('bank_name');
+        $supplier->bank_branch = $request->input('bank_branch');
+        $supplier->photo = $imageName;
+        $supplier->save();
+
+        Toastr::success('Supplier Successfully Updated', 'Success!!!');
+        return redirect()->route('admin.supplier.index');
     }
 
     /**
@@ -137,6 +193,14 @@ class SupplierController extends Controller
      */
     public function destroy(Supplier $supplier)
     {
-        //
+        // delete old photo
+        if (Storage::disk('public')->exists('supplier/'. $supplier->photo))
+        {
+            Storage::disk('public')->delete('supplier/'. $supplier->photo);
+        }
+
+        $supplier->delete();
+        Toastr::success('Supplier Successfully Deleted', 'Success!!!');
+        return redirect()->route('admin.supplier.index');
     }
 }

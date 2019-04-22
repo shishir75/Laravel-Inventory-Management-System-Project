@@ -66,7 +66,7 @@
                                             <div class="form-group">
                                                 <label>Type</label>
                                                 <select name="type" id="" class="form-control">
-                                                    <option value="">Select a Type</option>
+                                                    <option value="" disabled selected>Select a Type</option>
                                                     <option value="1">Distributor</option>
                                                     <option value="2">Whole Seller</option>
                                                     <option value="3">Brochure</option>

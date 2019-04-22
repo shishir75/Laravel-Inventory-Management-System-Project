@@ -1,6 +1,6 @@
 @extends('layouts.backend.app')
 
-@section('title', 'Show Customer')
+@section('title', 'Show Supplier')
 
 @push('css')
 
@@ -16,7 +16,7 @@
                     <div class="col-sm-6 offset-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Show Customer</li>
+                            <li class="breadcrumb-item active">Show Supplier</li>
                         </ol>
                     </div>
                 </div>
@@ -32,7 +32,7 @@
                         <!-- general form elements -->
                         <div class="card card-primary">
                             <div class="card-header">
-                                <h3 class="card-title">Show Customer</h3>
+                                <h3 class="card-title">Show Supplier</h3>
                             </div>
                             <!-- /.card-header -->
 
@@ -44,52 +44,65 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Name</label>
-                                                <p>{{ $customer->name }}</p>
+                                                <p>{{ $supplier->name }}</p>
                                             </div>
                                             <div class="form-group">
                                                 <label>Email</label>
-                                                <p>{{ $customer->email }}</p>
+                                                <p>{{ $supplier->email }}</p>
                                             </div>
                                             <div class="form-group">
                                                 <label>Phone</label>
-                                                <p>{{ $customer->phone }}</p>
+                                                <p>{{ $supplier->phone }}</p>
                                             </div>
                                             <div class="form-group">
                                                 <label>Address</label>
-                                                <p>{{ $customer->address }}</p>
+                                                <p>{{ $supplier->address }}</p>
                                             </div>
                                             <div class="form-group">
                                                 <label>City</label>
-                                                <p>{{ $customer->city }}</p>
+                                                <p>{{ $supplier->city }}</p>
                                             </div>
                                             <div class="form-group">
                                                 <label>Shop Name</label>
-                                                <p>{{ $customer->shop_name }}</p>
+                                                <p>{{ $supplier->shop_name }}</p>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
+                                                <label>Type</label>
+                                                <p>
+                                                    @if($supplier->type == 1)
+                                                        {{ 'Distributor' }}
+                                                    @elseif($supplier->type == 2)
+                                                        {{ 'Whole Seller' }}
+                                                    @elseif($supplier->type == 3)
+                                                        {{ 'Brochure' }}
+                                                    @else
+                                                        {{ 'None' }}
+                                                    @endif
+                                                </p>
+                                            </div>
+                                            <div class="form-group">
                                                 <label for="exampleInputFile">Photo</label>
                                                 <p>
-                                                    <img width="50" height="50" src="{{ URL::asset("storage/customer/".$customer->photo) }}" alt="{{ $customer->name }}">
+                                                    <img width="50" height="50" src="{{ URL::asset("storage/supplier/".$supplier->photo) }}" alt="{{ $supplier->name }}">
                                                 </p>
-
                                             </div>
                                             <div class="form-group">
                                                 <label>Account Holder</label>
-                                                <p>{{ $customer->account_holder }}</p>
+                                                <p>{{ $supplier->account_holder }}</p>
                                             </div>
                                             <div class="form-group">
                                                 <label>Account Number</label>
-                                                <p>{{ $customer->account_number }}</p>
+                                                <p>{{ $supplier->account_number }}</p>
                                             </div>
                                             <div class="form-group">
                                                 <label>Bank Name</label>
-                                                <p>{{ $customer->bank_name }}</p>
+                                                <p>{{ $supplier->bank_name }}</p>
                                             </div>
                                             <div class="form-group">
                                                 <label>Bank Branch</label>
-                                                <p>{{ $customer->bank_branch }}</p>
+                                                <p>{{ $supplier->bank_branch }}</p>
                                             </div>
                                         </div>
                                     </div>
