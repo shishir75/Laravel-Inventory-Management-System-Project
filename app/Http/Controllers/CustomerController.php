@@ -46,7 +46,7 @@ class CustomerController extends Controller
         $rules = [
             'name' => 'required | min:3',
             'email' => 'required| email | unique:customers',
-            'phone' => 'required',
+            'phone' => 'required | unique:customers',
             'address' => 'required',
             'city' => 'required',
             'photo' => 'required | image',

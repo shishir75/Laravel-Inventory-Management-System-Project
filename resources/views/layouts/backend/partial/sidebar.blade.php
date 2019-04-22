@@ -77,6 +77,29 @@
 						</li>
 					</ul>
 				</li>
+				<li class="nav-item has-treeview {{ Request::is('admin/supplier*') ? 'menu-open' : '' }}">
+					<a href="#" class="nav-link {{ Request::is('admin/supplier*') ? 'active' : '' }}">
+						<i class="nav-icon fa fa-pie-chart"></i>
+						<p>
+							Supplier
+							<i class="right fa fa-angle-left"></i>
+						</p>
+					</a>
+					<ul class="nav nav-treeview">
+						<li class="nav-item">
+							<a href="{{ route('admin.supplier.create') }}" class="nav-link {{ Request::is('admin/supplier/create') ? 'active' : '' }}">
+								<i class="fa fa-circle-o nav-icon"></i>
+								<p>Add Supplier</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="{{ route('admin.supplier.index') }}" class="nav-link {{ Request::is('admin/supplier') ? 'active' : '' }}">
+								<i class="fa fa-circle-o nav-icon"></i>
+								<p>All Supplier</p>
+							</a>
+						</li>
+					</ul>
+				</li>
 
 				<li class="nav-header">MENU</li>
 				<li class="nav-item">
