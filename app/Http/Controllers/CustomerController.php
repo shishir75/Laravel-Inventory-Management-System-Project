@@ -124,7 +124,61 @@ class CustomerController extends Controller
      */
     public function update(Request $request, Customer $customer)
     {
-        //
+        $inputs = $request->except('_token');
+        $rules = [
+            'name' => 'required | min:3',
+            'email' => 'required| email',
+            'phone' => 'required',
+            'address' => 'required',
+            'city' => 'required',
+            'photo' => 'image',
+        ];
+
+        $validation = Validator::make($inputs, $rules);
+        if ($validation->fails())
+        {
+            return redirect()->back()->withErrors($validation)->withInput();
+        }
+
+        $image = $request->file('photo');
+        $slug =  Str::slug($request->input('name'));
+        if (isset($image))
+        {
+            $currentDate = Carbon::now()->toDateString();
+            $imageName = $slug.'-'.$currentDate.'-'.uniqid().'.'.$image->getClientOriginalExtension();
+            if (!Storage::disk('public')->exists('customer'))
+            {
+                Storage::disk('public')->makeDirectory('customer');
+            }
+
+            // delete old photo
+            if (Storage::disk('public')->exists('customer/'. $customer->photo))
+            {
+                Storage::disk('public')->delete('customer/'. $customer->photo);
+            }
+
+            $postImage = Image::make($image)->resize(480, 320)->stream();
+            Storage::disk('public')->put('customer/'.$imageName, $postImage);
+        } else
+        {
+            $imageName = $customer->photo;
+        }
+
+        $customer->name = $request->input('name');
+        $customer->email = $request->input('email');
+        $customer->phone = $request->input('phone');
+        $customer->address = $request->input('address');
+        $customer->city = $request->input('city');
+        $customer->shop_name = $request->input('shop_name');
+        $customer->account_holder = $request->input('account_holder');
+        $customer->account_number = $request->input('account_number');
+        $customer->bank_name = $request->input('bank_name');
+        $customer->bank_branch = $request->input('bank_branch');
+        $customer->photo = $imageName;
+        $customer->save();
+
+        Toastr::success('Customer Successfully Updated', 'Success!!!');
+        return redirect()->route('admin.customer.index');
     }
 
     /**
@@ -135,6 +189,12 @@ class CustomerController extends Controller
      */
     public function destroy(Customer $customer)
     {
-        //
+        if (Storage::disk('public')->exists('customer/'. $customer->photo))
+        {
+            Storage::disk('public')->delete('customer/'. $customer->photo);
+        }
+        $customer->delete();
+        Toastr::success('Customer Successfully Deleted', 'Success!!!');
+        return redirect()->route('admin.customer.index');
     }
 }

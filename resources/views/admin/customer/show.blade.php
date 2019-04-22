@@ -1,6 +1,6 @@
 @extends('layouts.backend.app')
 
-@section('title', 'Show Employee')
+@section('title', 'Show Customer')
 
 @push('css')
 
@@ -16,7 +16,7 @@
                     <div class="col-sm-6 offset-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Show Employee</li>
+                            <li class="breadcrumb-item active">Show Customer</li>
                         </ol>
                     </div>
                 </div>
@@ -32,7 +32,7 @@
                         <!-- general form elements -->
                         <div class="card card-primary">
                             <div class="card-header">
-                                <h3 class="card-title">Show Employee</h3>
+                                <h3 class="card-title">Show Customer</h3>
                             </div>
                             <!-- /.card-header -->
 
@@ -44,48 +44,52 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Name</label>
-                                                <p>{{ $employee->name }}</p>
+                                                <p>{{ $customer->name }}</p>
                                             </div>
                                             <div class="form-group">
                                                 <label>Email</label>
-                                                <p>{{ $employee->email }}</p>
+                                                <p>{{ $customer->email }}</p>
                                             </div>
                                             <div class="form-group">
                                                 <label>Phone</label>
-                                                <p>{{ $employee->phone }}</p>
+                                                <p>{{ $customer->phone }}</p>
                                             </div>
                                             <div class="form-group">
                                                 <label>Address</label>
-                                                <p>{{ $employee->address }}</p>
+                                                <p>{{ $customer->address }}</p>
                                             </div>
                                             <div class="form-group">
                                                 <label>City</label>
-                                                <p>{{ $employee->city }}</p>
+                                                <p>{{ $customer->city }}</p>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Shop Name</label>
+                                                <p>{{ $customer->shop_name }}</p>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label>Experience</label>
-                                                <p>{{ $employee->experience }}</p>
-                                            </div>
-                                            <div class="form-group">
                                                 <label for="exampleInputFile">Photo</label>
                                                 <p>
-                                                    <img width="50" height="50" src="{{ URL::asset("storage/employee/".$employee->photo) }}" alt="{{ $employee->name }}">
+                                                    <img width="50" height="50" src="{{ URL::asset("storage/customer/".$customer->photo) }}" alt="{{ $customer->name }}">
                                                 </p>
 
                                             </div>
                                             <div class="form-group">
-                                                <label>NID No</label>
-                                                <p>{{ $employee->nid_no }}</p>
+                                                <label>Account Holder</label>
+                                                <p>{{ $customer->account_holder }}</p>
                                             </div>
                                             <div class="form-group">
-                                                <label>Salary</label>
-                                                <p>{{ $employee->salary }}</p>
+                                                <label>Account Number</label>
+                                                <p>{{ $customer->account_number }}</p>
                                             </div>
                                             <div class="form-group">
-                                                <label>Vacation</label>
-                                                <p>{{ $employee->vacation }}</p>
+                                                <label>Bank Name</label>
+                                                <p>{{ $customer->bank_name }}</p>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Bank Branch</label>
+                                                <p>{{ $customer->bank_branch }}</p>
                                             </div>
                                         </div>
                                     </div>
