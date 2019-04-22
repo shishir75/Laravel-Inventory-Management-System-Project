@@ -14878,7 +14878,7 @@
 	 * @example
 	 *   // Column definition using the number renderer
 	 *   {
-	 *     data: "salary",
+	 *     data: "advanced_salary",
 	 *     render: $.fn.dataTable.render.number( '\'', '.', 0, '$' )
 	 *   }
 	 *

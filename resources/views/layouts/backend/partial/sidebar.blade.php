@@ -100,6 +100,53 @@
 						</li>
 					</ul>
 				</li>
+				<li class="nav-item has-treeview {{ Request::is('admin/advanced_salary*') ? 'menu-open' : '' }}">
+					<a href="#" class="nav-link {{ Request::is('admin/advanced_salary*') ? 'active' : '' }}">
+						<i class="nav-icon fa fa-pie-chart"></i>
+						<p>
+							Advanced Salary (EMP)
+							<i class="right fa fa-angle-left"></i>
+						</p>
+					</a>
+					<ul class="nav nav-treeview">
+						<li class="nav-item">
+							<a href="{{ route('admin.advanced_salary.create') }}" class="nav-link {{ Request::is('admin/advanced_salary/create') ? 'active' : '' }}">
+								<i class="fa fa-circle-o nav-icon"></i>
+								<p>Add Salary</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="{{ route('admin.advanced_salary.index') }}" class="nav-link {{ Request::is('admin/advanced_salary') ? 'active' : '' }}">
+								<i class="fa fa-circle-o nav-icon"></i>
+								<p>All Salary</p>
+							</a>
+						</li>
+					</ul>
+				</li>
+
+				<li class="nav-item has-treeview {{ Request::is('admin/salary*') ? 'menu-open' : '' }}">
+					<a href="#" class="nav-link {{ Request::is('admin/salary*') ? 'active' : '' }}">
+						<i class="nav-icon fa fa-pie-chart"></i>
+						<p>
+							Salary (EMP)
+							<i class="right fa fa-angle-left"></i>
+						</p>
+					</a>
+					<ul class="nav nav-treeview">
+						<li class="nav-item">
+							<a href="{{ route('admin.salary.create') }}" class="nav-link {{ Request::is('admin/salary/create') ? 'active' : '' }}">
+								<i class="fa fa-circle-o nav-icon"></i>
+								<p>Pay Salary</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="{{ route('admin.salary.index') }}" class="nav-link {{ Request::is('admin/salary') ? 'active' : '' }}">
+								<i class="fa fa-circle-o nav-icon"></i>
+								<p>All Salary</p>
+							</a>
+						</li>
+					</ul>
+				</li>
 
 				<li class="nav-header">MENU</li>
 				<li class="nav-item">
