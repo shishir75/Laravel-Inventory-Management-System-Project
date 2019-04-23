@@ -194,6 +194,41 @@
 						</li>
 					</ul>
 				</li>
+				<li class="nav-item has-treeview {{ Request::is('admin/expense*') ? 'menu-open' : '' }}">
+					<a href="#" class="nav-link {{ Request::is('admin/expense*') ? 'active' : '' }}">
+						<i class="nav-icon fa fa-pie-chart"></i>
+						<p>
+							Expense
+							<i class="right fa fa-angle-left"></i>
+						</p>
+					</a>
+					<ul class="nav nav-treeview">
+						<li class="nav-item">
+							<a href="{{ route('admin.expense.create') }}" class="nav-link {{ Request::is('admin/expense/create') ? 'active' : '' }}">
+								<i class="fa fa-circle-o nav-icon"></i>
+								<p>Add Expense</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="{{ route('admin.expense.today') }}" class="nav-link {{ Request::is('admin/expense-today') ? 'active' : '' }}">
+								<i class="fa fa-circle-o nav-icon"></i>
+								<p>Today Expense</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="{{ route('admin.expense.month') }}" class="nav-link {{ Request::is('admin/expense-this-month') ? 'active' : '' }}">
+								<i class="fa fa-circle-o nav-icon"></i>
+								<p>This Month Expense</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="{{ route('admin.expense.index') }}" class="nav-link {{ Request::is('admin/expense') ? 'active' : '' }}">
+								<i class="fa fa-circle-o nav-icon"></i>
+								<p>All Expense</p>
+							</a>
+						</li>
+					</ul>
+				</li>
 
 				<li class="nav-header">MENU</li>
 				<li class="nav-item">
