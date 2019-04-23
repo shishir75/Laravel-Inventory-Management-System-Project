@@ -1,6 +1,6 @@
 @extends('layouts.backend.app')
 
-@section('title', 'Pay Salary')
+@section('title', 'Categories')
 
 @push('css')
     <!-- DataTables -->
@@ -18,7 +18,7 @@
                     <div class="col-sm-6 offset-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Pay Salary</li>
+                            <li class="breadcrumb-item active">Categories</li>
                         </ol>
                     </div>
                 </div>
@@ -34,7 +34,7 @@
                         <!-- general form elements -->
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">PAY SALARIES LISTS <small class="text-danger pull-right">{{ date('F Y') }}</small></h3>
+                                <h3 class="card-title">CATEGORIES LISTS</h3>
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
@@ -42,40 +42,38 @@
                                     <thead>
                                     <tr>
                                         <th>Serial</th>
-                                        <th>Employee Name</th>
-                                        <th>Photo</th>
-                                        <th>Salary</th>
-                                        <th>Month</th>
-                                        <th>Advanced</th>
+                                        <th>Category Name</th>
+                                        <th>Total Products</th>
                                         <th>Actions</th>
                                     </tr>
                                     </thead>
                                     <tfoot>
                                     <tr>
                                         <th>Serial</th>
-                                        <th>Employee Name</th>
-                                        <th>Photo</th>
-                                        <th>Salary</th>
-                                        <th>Month</th>
-                                        <th>Advanced</th>
+                                        <th>Category Name</th>
+                                        <th>Total Products</th>
                                         <th>Actions</th>
                                     </tr>
                                     </tfoot>
                                     <tbody>
-                                    @foreach($employees as $key => $employee)
+                                    @foreach($categories as $key => $category)
                                         <tr>
                                             <td>{{ $key + 1 }}</td>
-                                            <td>{{ $employee->name }}</td>
-                                            <td>
-                                                <img width="50" height="50" src="{{ URL::asset('storage/employee/'. $employee->photo) }}" alt="{{ $employee->name }}">
-                                            </td>
-                                            <td>{{ $employee->salary }}</td>
-                                            <td>{{ date('F', strtotime('-1 month')) }}</td>
+                                            <td>{{ $category->name }}</td>
                                             <td></td>
                                             <td>
-                                                <a class="btn btn-info text-white">
-                                                    Pay Now
+                                                <a href="{{ route('admin.category.edit', $category->id) }}" class="btn
+													btn-info">
+                                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                                 </a>
+                                                <button class="btn btn-danger" type="button" onclick="deleteItem({{ $category->id }})">
+                                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                                </button>
+                                                <form id="delete-form-{{ $category->id }}" action="{{ route('admin.category.destroy', $category->id) }}" method="post"
+                                                      style="display:none;">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                </form>
                                             </td>
                                         </tr>
                                     @endforeach
