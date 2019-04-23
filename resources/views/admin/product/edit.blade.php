@@ -1,6 +1,6 @@
 @extends('layouts.backend.app')
 
-@section('title', 'Update Employee')
+@section('title', 'Update Product')
 
 @push('css')
 
@@ -17,7 +17,7 @@
                     <div class="col-sm-6 offset-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Update Employee</li>
+                            <li class="breadcrumb-item active">Update Product</li>
                         </ol>
                     </div>
                 </div>
@@ -33,66 +33,90 @@
                         <!-- general form elements -->
                         <div class="card card-primary">
                             <div class="card-header">
-                                <h3 class="card-title">Update Employee</h3>
+                                <h3 class="card-title">Update Product</h3>
                             </div>
                             <!-- /.card-header -->
 
                             <!-- form start -->
-                            <form role="form" action="{{ route('admin.employee.update', $employee->id) }}" method="post" enctype="multipart/form-data">
+                            <form role="form" action="{{ route('admin.product.update', $product->id) }}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 @method('PUT')
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label>Name</label>
-                                                <input type="text" class="form-control" name="name" value="{{ $employee->name }}" placeholder="Enter Name">
+                                                <label>Product Name</label>
+                                                <input type="text" class="form-control" name="name" value="{{ $product->name }}" placeholder="Enter Product Name">
                                             </div>
                                             <div class="form-group">
-                                                <label>Email</label>
-                                                <input type="email" class="form-control" name="email" value="{{ $employee->email }}"  placeholder="Enter Email">
+                                                <label>Product Category</label>
+                                                <select name="category_id" class="form-control">
+                                                    <option value="" disabled selected>Select a Category</option>
+                                                    @foreach($categories as $category)
+                                                        <option value="{{ $category->id }}" {{ $product->category->id == $category->id ? 'selected' : '' }}>{{ $category->name }}</option>
+                                                    @endforeach
+                                                </select>
                                             </div>
                                             <div class="form-group">
-                                                <label>Phone</label>
-                                                <input type="text" class="form-control" name="phone" value="{{ $employee->phone }}" placeholder="Enter Phone">
+                                                <label>Supplier Name</label>
+                                                <select name="supplier_id" class="form-control">
+                                                    <option value="" disabled selected>Select a Supplier</option>
+                                                    @foreach($suppliers as $supplier)
+                                                        <option value="{{ $supplier->id }}" {{ $product->supplier->id == $supplier->id ? 'selected' : '' }}>{{ $supplier->name }}</option>
+                                                    @endforeach
+                                                </select>
                                             </div>
                                             <div class="form-group">
-                                                <label>Address</label>
-                                                <input type="text" class="form-control" name="address" value="{{ $employee->address }}" placeholder="Enter Address">
+                                                <label>Product Code</label>
+                                                <input type="text" class="form-control" name="code" value="{{ $product->code }}" placeholder="Enter Product Code">
                                             </div>
                                             <div class="form-group">
-                                                <label>City</label>
-                                                <input type="text" class="form-control" name="city" value="{{ $employee->city }}" placeholder="Enter City">
+                                                <label>Garage</label>
+                                                <select name="garage" class="form-control">
+                                                    <option value="" disabled>Select a Garage</option>
+                                                    <option value="A" {{ $product->garage == "A" ? 'selected' : '' }}>Garage A</option>
+                                                    <option value="B" {{ $product->garage == "B" ? 'selected' : '' }}>Garage B</option>
+                                                    <option value="C" {{ $product->garage == "C" ? 'selected' : '' }}>Garage C</option>
+                                                    <option value="D" {{ $product->garage == "D" ? 'selected' : '' }}>Garage D</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Route</label>
+                                                <select name="route" class="form-control">
+                                                    <option value="" disabled>Select a Route</option>
+                                                    <option value="A" {{ $product->route == 'A' ? 'selected' : '' }}>Route A</option>
+                                                    <option value="B" {{ $product->route == 'B' ? 'selected' : '' }}>Route B</option>
+                                                    <option value="C" {{ $product->route == 'C' ? 'selected' : '' }}>Route C</option>
+                                                    <option value="D" {{ $product->route == 'D' ? 'selected' : '' }}>Route D</option>
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label>Experience</label>
-                                                <input type="text" class="form-control" name="experience" value="{{ $employee->experience }}" placeholder="Enter Experience">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="exampleInputFile">Photo</label>
+                                                <label for="exampleInputFile">Product Image</label>
                                                 <div class="input-group">
                                                     <div class="custom-file">
-                                                        <input type="file" name="photo" class="custom-file-input" id="exampleInputFile">
+                                                        <input type="file" name="image" class="custom-file-input" id="exampleInputFile">
                                                         <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                                                     </div>
                                                 </div>
-                                                <p class="mt-2">
-                                                    <img width="50" height="50" src="{{ URL::asset("storage/employee/".$employee->photo) }}" alt="{{ $employee->name }}">
-                                                </p>
+                                                <img class="mt-2" width="50" height="40" src="{{ URL::asset('storage/product/'. $product->image) }}" alt="{{ $product->name }}">
                                             </div>
                                             <div class="form-group">
-                                                <label>NID No</label>
-                                                <input type="text" class="form-control" name="nid_no" value="{{ $employee->nid_no }}" placeholder="Enter NID No">
+                                                <label>Buying Date</label>
+                                                <input type="date" class="form-control" name="buying_date" value="{{ $product->buying_date }}">
                                             </div>
                                             <div class="form-group">
-                                                <label>Salary</label>
-                                                <input type="text" class="form-control" name="salary" value="{{ $employee->salary }}" placeholder="Enter Salary">
+                                                <label>Expire Date</label>
+                                                <input type="date" class="form-control" name="expire_date" value="{{ $product->expire_date }}">
                                             </div>
                                             <div class="form-group">
-                                                <label>Vacation</label>
-                                                <input type="text" class="form-control" name="vacation" value="{{ $employee->vacation }}" placeholder="Enter Vacation">
+                                                <label>Buying Price</label>
+                                                <input type="text" class="form-control" name="buying_price" value="{{ $product->buying_price }}" placeholder="Enter Buying Price">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Selling Price</label>
+                                                <input type="text" class="form-control" name="selling_price" value="{{ $product->selling_price }}" placeholder="Enter Selling Price">
                                             </div>
                                         </div>
                                     </div>
@@ -101,7 +125,7 @@
                                 <!-- /.card-body -->
 
                                 <div class="card-footer">
-                                    <button type="submit" class="btn btn-primary float-md-right">Update Employee</button>
+                                    <button type="submit" class="btn btn-primary float-md-right">Update $product</button>
                                 </div>
                             </form>
                         </div>
