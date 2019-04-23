@@ -32,6 +32,7 @@ Route::group(['as'=>'admin.', 'prefix' => 'admin', 'middleware' => 'auth' ], fun
     Route::resource('advanced_salary', 'AdvancedSalaryController');
     Route::resource('salary', 'SalaryController');
     Route::resource('category', 'CategoryController');
+    Route::resource('product', 'ProductController');
 
 
 });
