@@ -1,6 +1,6 @@
 @extends('layouts.backend.app')
 
-@section('title', 'Show Employee')
+@section('title', 'Show Product')
 
 @push('css')
 
@@ -16,7 +16,7 @@
                     <div class="col-sm-6 offset-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Show Employee</li>
+                            <li class="breadcrumb-item active">Show Product</li>
                         </ol>
                     </div>
                 </div>
@@ -32,7 +32,7 @@
                         <!-- general form elements -->
                         <div class="card card-primary">
                             <div class="card-header">
-                                <h3 class="card-title">Show Employee</h3>
+                                <h3 class="card-title">Show Product</h3>
                             </div>
                             <!-- /.card-header -->
 
@@ -44,48 +44,52 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Name</label>
-                                                <p>{{ $employee->name }}</p>
+                                                <p>{{ $product->name }}</p>
                                             </div>
                                             <div class="form-group">
-                                                <label>Email</label>
-                                                <p>{{ $employee->email }}</p>
+                                                <label for="exampleInputFile">Image</label>
+                                                <p>
+                                                    <img width="50" height="50" src="{{ URL::asset("storage/product/".$product->image) }}" alt="{{ $product->name }}">
+                                                </p>
                                             </div>
                                             <div class="form-group">
-                                                <label>Phone</label>
-                                                <p>{{ $employee->phone }}</p>
+                                                <label>Category</label>
+                                                <p>{{ $product->category->name }}</p>
                                             </div>
                                             <div class="form-group">
-                                                <label>Address</label>
-                                                <p>{{ $employee->address }}</p>
+                                                <label>Supplier</label>
+                                                <p>{{ $product->supplier->name }}</p>
                                             </div>
                                             <div class="form-group">
-                                                <label>City</label>
-                                                <p>{{ $employee->city }}</p>
+                                                <label>Code</label>
+                                                <p>{{ $product->code }}</p>
                                             </div>
+
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label>Experience</label>
-                                                <p>{{ $employee->experience }}</p>
+                                                <label>Garage</label>
+                                                <p>{{ $product->garage }}</p>
                                             </div>
                                             <div class="form-group">
-                                                <label for="exampleInputFile">Photo</label>
-                                                <p>
-                                                    <img width="50" height="50" src="{{ URL::asset("storage/employee/".$employee->photo) }}" alt="{{ $employee->name }}">
-                                                </p>
-
+                                                <label>Route</label>
+                                                <p>{{ $product->route }}</p>
                                             </div>
                                             <div class="form-group">
-                                                <label>NID No</label>
-                                                <p>{{ $employee->nid_no }}</p>
+                                                <label>Buying Date</label>
+                                                <p>{{ $product->buying_date->toFormattedDateString() }}</p>
                                             </div>
                                             <div class="form-group">
-                                                <label>Salary</label>
-                                                <p>{{ $employee->salary }}</p>
+                                                <label>Expire Date</label>
+                                                <p>{{ $product->expire_date->toFormattedDateString() }}</p>
                                             </div>
                                             <div class="form-group">
-                                                <label>Vacation</label>
-                                                <p>{{ $employee->vacation }}</p>
+                                                <label>Buying Price</label>
+                                                <p>{{ number_format($product->buying_price, 2) ." Taka" }}</p>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Selling Price</label>
+                                                <p>{{ number_format($product->selling_price, 2) ." Taka" }}</p>
                                             </div>
                                         </div>
                                     </div>
