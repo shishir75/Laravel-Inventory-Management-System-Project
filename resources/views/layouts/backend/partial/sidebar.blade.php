@@ -31,6 +31,14 @@
 						</p>
 					</a>
 				</li>
+				<li class="nav-item has-treeview">
+					<a href="{{ route('admin.dashboard') }}" class="nav-link {{ Request::is('admin/pos') ? 'active' : '' }}">
+						<i class="nav-icon fa fa-dashboard"></i>
+						<p>
+							Point of Sales (POS)
+						</p>
+					</a>
+				</li>
 				<li class="nav-item has-treeview {{ Request::is('admin/employee*') ? 'menu-open' : '' }}">
 					<a href="#" class="nav-link {{ Request::is('admin/employee*') ? 'active' : '' }}">
 						<i class="nav-icon fa fa-pie-chart"></i>
@@ -50,6 +58,29 @@
 							<a href="{{ route('admin.employee.index') }}" class="nav-link {{ Request::is('admin/employee') ? 'active' : '' }}">
 								<i class="fa fa-circle-o nav-icon"></i>
 								<p>All Employee</p>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="nav-item has-treeview {{ Request::is('admin/attendance*') ? 'menu-open' : '' }}">
+					<a href="#" class="nav-link {{ Request::is('admin/attendance*') ? 'active' : '' }}">
+						<i class="nav-icon fa fa-pie-chart"></i>
+						<p>
+							Attendance (EMP)
+							<i class="right fa fa-angle-left"></i>
+						</p>
+					</a>
+					<ul class="nav nav-treeview">
+						<li class="nav-item">
+							<a href="{{ route('admin.attendance.create') }}" class="nav-link {{ Request::is('admin/attendance/create') ? 'active' : '' }}">
+								<i class="fa fa-circle-o nav-icon"></i>
+								<p>Take Attendance</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="{{ route('admin.attendance.index') }}" class="nav-link {{ Request::is('admin/attendance') ? 'active' : '' }}">
+								<i class="fa fa-circle-o nav-icon"></i>
+								<p>All Attendance</p>
 							</a>
 						</li>
 					</ul>
@@ -236,9 +267,55 @@
 					</ul>
 				</li>
 
-				<li class="nav-header">MENU</li>
-				<li class="nav-item">
+				<li class="nav-item has-treeview {{ Request::is('admin/sales*') ? 'menu-open' : '' }}">
+					<a href="#" class="nav-link {{ Request::is('admin/sales*') ? 'active' : '' }}">
+						<i class="nav-icon fa fa-pie-chart"></i>
+						<p>
+							Sales Report
+							<i class="right fa fa-angle-left"></i>
+						</p>
+					</a>
+					<ul class="nav nav-treeview">
+						<li class="nav-item">
+							<a href="#" class="nav-link {{ Request::is('admin/sales/create') ? 'active' : '' }}">
+								<i class="fa fa-circle-o nav-icon"></i>
+								<p>First</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link {{ Request::is('admin/sales') ? 'active' : '' }}">
+								<i class="fa fa-circle-o nav-icon"></i>
+								<p>Second</p>
+							</a>
+						</li>
+					</ul>
+				</li>
 
+				<li class="nav-header">MENU</li>
+				<li class="nav-item has-treeview {{ Request::is('admin/settings*') ? 'menu-open' : '' }}">
+					<a href="#" class="nav-link {{ Request::is('admin/settings*') ? 'active' : '' }}">
+						<i class="nav-icon fa fa-pie-chart"></i>
+						<p>
+							Settings
+							<i class="right fa fa-angle-left"></i>
+						</p>
+					</a>
+					<ul class="nav nav-treeview">
+						<li class="nav-item">
+							<a href="#" class="nav-link {{ Request::is('admin/settings/create') ? 'active' : '' }}">
+								<i class="fa fa-circle-o nav-icon"></i>
+								<p>First</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link {{ Request::is('admin/settings') ? 'active' : '' }}">
+								<i class="fa fa-circle-o nav-icon"></i>
+								<p>Second</p>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="nav-item">
 					<a class="nav-link" href="{{ route('logout') }}"
 					   onclick="event.preventDefault();
 					   document.getElementById('logout-form').submit();">
@@ -247,8 +324,6 @@
 					<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
 						@csrf
 					</form>
-
-
 				</li>
 
 			</ul>

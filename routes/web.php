@@ -28,6 +28,8 @@ Route::group(['as'=>'admin.', 'prefix' => 'admin', 'middleware' => 'auth' ], fun
     Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
     Route::resource('employee', 'EmployeeController');
     Route::resource('customer', 'CustomerController');
+    Route::resource('attendance', 'AttendanceController');
+    Route::put('attendance/{attendance?}', 'AttendanceController@att_update')->name('attendance.att_update');
     Route::resource('supplier', 'SupplierController');
     Route::resource('advanced_salary', 'AdvancedSalaryController');
     Route::resource('salary', 'SalaryController');

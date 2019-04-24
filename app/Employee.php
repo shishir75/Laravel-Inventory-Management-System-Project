@@ -12,7 +12,12 @@ class Employee extends Model
 
     public function advanced_salaries()
     {
-        return $this->hasMany(Employee::class);
+        return $this->hasMany(Advanced_Salary::class);
     }
-    
+
+
+    public function attendances()
+    {
+        return $this->hasMany(Attendance::class);
+    }
 }
