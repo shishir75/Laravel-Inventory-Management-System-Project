@@ -10,6 +10,10 @@ class Attendance extends Model
         'date'
     ];
 
+    protected $fillable = [
+      'attendance',
+    ];
+
     public function employee()
     {
         return $this->belongsTo(Employee::class);

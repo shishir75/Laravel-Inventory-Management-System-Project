@@ -113,16 +113,14 @@ class AttendanceController extends Controller
     {
         foreach ($request->id as $att_id) {
 
-            $attendance = new Attendance();
-            $attendance->employee_id = $emp_id;
-            $attendance->attendance = $request->attendance[$emp_id];
-            $attendance->date = date('Y-m-d');
-            $attendance->month = strtolower(date('F'));
-            $attendance->year = date('Y');
+            $up_attendance = $request->attendance[$att_id];
+
+            $attendance = Attendance::where('id', $att_id)->first();
+            $attendance->attendance = $up_attendance;
             $attendance->save();
         }
 
-        Toastr::success('Attendance Taken Successfully', 'Success');
+        Toastr::success('Attendance Updated Successfully', 'Success');
         return redirect()->back();
     }
 
