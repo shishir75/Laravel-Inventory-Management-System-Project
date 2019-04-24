@@ -10,9 +10,6 @@ class Attendance extends Model
         'date'
     ];
 
-    protected $fillable = [
-      'attendance',
-    ];
 
     public function employee()
     {
