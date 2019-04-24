@@ -216,9 +216,15 @@
 							</a>
 						</li>
 						<li class="nav-item">
-							<a href="{{ route('admin.expense.month') }}" class="nav-link {{ Request::is('admin/expense-this-month') ? 'active' : '' }}">
+							<a href="{{ route('admin.expense.month') }}" class="nav-link {{ Request::is('admin/expense-month*') ? 'active' : '' }}">
 								<i class="fa fa-circle-o nav-icon"></i>
-								<p>This Month Expense</p>
+								<p>Monthly Expense</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="{{ route('admin.expense.yearly') }}" class="nav-link {{ Request::is('admin/expense-yearly*') ? 'active' : '' }}">
+								<i class="fa fa-circle-o nav-icon"></i>
+								<p>Yearly Expense</p>
 							</a>
 						</li>
 						<li class="nav-item">
