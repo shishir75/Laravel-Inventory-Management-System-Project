@@ -292,28 +292,13 @@
 				</li>
 
 				<li class="nav-header">MENU</li>
-				<li class="nav-item has-treeview {{ Request::is('admin/settings*') ? 'menu-open' : '' }}">
-					<a href="#" class="nav-link {{ Request::is('admin/settings*') ? 'active' : '' }}">
-						<i class="nav-icon fa fa-pie-chart"></i>
+				<li class="nav-item has-treeview">
+					<a href="{{ route('admin.setting.index') }}" class="nav-link {{ Request::is('admin/setting') ? 'active' : '' }}">
+						<i class="nav-icon fa fa-server"></i>
 						<p>
-							Settings
-							<i class="right fa fa-angle-left"></i>
+							Setting
 						</p>
 					</a>
-					<ul class="nav nav-treeview">
-						<li class="nav-item">
-							<a href="#" class="nav-link {{ Request::is('admin/settings/create') ? 'active' : '' }}">
-								<i class="fa fa-circle-o nav-icon"></i>
-								<p>First</p>
-							</a>
-						</li>
-						<li class="nav-item">
-							<a href="#" class="nav-link {{ Request::is('admin/settings') ? 'active' : '' }}">
-								<i class="fa fa-circle-o nav-icon"></i>
-								<p>Second</p>
-							</a>
-						</li>
-					</ul>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="{{ route('logout') }}"

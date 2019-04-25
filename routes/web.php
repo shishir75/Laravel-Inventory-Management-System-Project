@@ -40,5 +40,8 @@ Route::group(['as'=>'admin.', 'prefix' => 'admin', 'middleware' => 'auth' ], fun
     Route::get('expense-month/{month?}', 'ExpenseController@month_expense')->name('expense.month');
     Route::get('expense-yearly/{year?}', 'ExpenseController@yearly_expense')->name('expense.yearly');
 
+    Route::get('setting', 'SettingController@index')->name('setting.index');
+    Route::put('setting/{id}', 'SettingController@update')->name('setting.update');
+
 
 });
