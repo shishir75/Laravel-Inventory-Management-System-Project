@@ -67,10 +67,10 @@
 													btn-info">
                                                     <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                                 </a>
-                                                <button class="btn btn-danger" type="button" onclick="deleteItem({{ $date->date }})">
+                                                <button class="btn btn-danger" type="button" onclick="deleteItem({{ date("Ymd", strtotime($date->date)) }})">
                                                     <i class="fa fa-trash" aria-hidden="true"></i>
                                                 </button>
-                                                <form id="delete-form-{{ $date->date }}" action="{{ route('admin.attendance.destroy', date("Y-m-d", strtotime($date->date))) }}" method="post"
+                                                <form id="delete-form-{{ date("Ymd", strtotime($date->date)) }}" action="{{ route('admin.attendance.destroy', date("Y-m-d", strtotime($date->date))) }}" method="post"
                                                       style="display:none;">
                                                     @csrf
                                                     @method('DELETE')
@@ -129,7 +129,7 @@
 
 
     <script type="text/javascript">
-        function deleteItem(id) {
+        function deleteItem(date) {
             const swalWithBootstrapButtons = swal.mixin({
                 confirmButtonClass: 'btn btn-success',
                 cancelButtonClass: 'btn btn-danger',
@@ -147,7 +147,7 @@
             }).then((result) => {
                 if (result.value) {
                     event.preventDefault();
-                    document.getElementById('delete-form-'+id).submit();
+                    document.getElementById('delete-form-'+date).submit();
                 } else if (
                     // Read more about handling dismissals
                     result.dismiss === swal.DismissReason.cancel

@@ -17,7 +17,7 @@ class AttendanceController extends Controller
      */
     public function index()
     {
-        $dates = Attendance::select("*")->groupBy('date')->get();
+        $dates = Attendance::latest()->groupBy('date')->get();
         return view('admin.attendance.index', compact('dates'));
     }
 
@@ -68,7 +68,7 @@ class AttendanceController extends Controller
             }
 
             Toastr::success('Attendance Taken Successfully', 'Success');
-            return redirect()->back();
+            return redirect()->route('admin.attendance.index');
 
         } else {
             Toastr::error('Attendance already Taken Today', 'Error');
@@ -130,8 +130,16 @@ class AttendanceController extends Controller
      * @param  \App\Attendance  $attendance
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Attendance $attendance)
+    public function destroy($date)
     {
-        //
+        $attendances = Attendance::where('date', $date)->get();
+        foreach ($attendances as $attendance)
+        {
+            $attendance->delete();
+        }
+
+        Toastr::success('Attendance Deleted Successfully', 'Success');
+        return redirect()->back();
+
     }
 }

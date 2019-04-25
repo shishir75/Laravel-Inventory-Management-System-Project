@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41f185f3-e1d6-4ef4-ad2d-c7de32da7114" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Attendance.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Attendance.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AttendanceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AttendanceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/attendance/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/attendance/index.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,11 +17,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AttendanceController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="518">
-              <caret line="126" column="7" lean-forward="true" selection-start-line="126" selection-start-column="7" selection-end-line="126" selection-end-column="7" />
+            <state relative-caret-position="600">
+              <caret line="139" lean-forward="true" selection-start-line="139" selection-end-line="139" />
               <folding>
                 <element signature="e#40#59#0#PHP" expanded="true" />
               </folding>
@@ -28,29 +29,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Attendance.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/attendance/edit.blade.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/attendance/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="58" column="93" selection-start-line="58" selection-start-column="93" selection-end-line="58" selection-end-column="93" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/web.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="24" column="14" lean-forward="true" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
+            <state relative-caret-position="586">
+              <caret line="79" column="47" lean-forward="true" selection-start-line="79" selection-start-column="47" selection-end-line="79" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -113,14 +96,14 @@
         <option value="$PROJECT_DIR$/resources/views/layouts/backend/partial/sidebar.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/attendance/create.blade.php" />
         <option value="$PROJECT_DIR$/config/database.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/attendance/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Employee.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/attendance/show.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_04_24_144756_create_attendances_table.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/attendance/edit.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/AttendanceController.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Attendance.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/attendance/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/AttendanceController.php" />
       </list>
     </option>
   </component>
@@ -266,12 +249,6 @@
             <path>
               <item name="laravel_inventory" type="b2602c69:ProjectViewProjectNode" />
               <item name="laravel_inventory" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="laravel_inventory" type="b2602c69:ProjectViewProjectNode" />
-              <item name="laravel_inventory" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -294,14 +271,6 @@
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="admin" type="462c0819:PsiDirectoryNode" />
               <item name="attendance" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="laravel_inventory" type="b2602c69:ProjectViewProjectNode" />
-              <item name="laravel_inventory" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="customer" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="laravel_inventory" type="b2602c69:ProjectViewProjectNode" />
@@ -392,7 +361,9 @@
       <workItem from="1555947150126" duration="11604000" />
       <workItem from="1556024252208" duration="4795000" />
       <workItem from="1556034578503" duration="16077000" />
-      <workItem from="1556090957624" duration="17116000" />
+      <workItem from="1556090957624" duration="17276000" />
+      <workItem from="1556206810313" duration="806000" />
+      <workItem from="1556207647528" duration="2533000" />
     </task>
     <task id="LOCAL-00001" summary="Update">
       <created>1555865101416</created>
@@ -405,13 +376,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75211000" />
+    <option name="totallyTimeSpent" value="78710000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="21" width="1938" height="1068" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49836066" visible="true" weight="0.18477103" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49836066" visible="true" weight="0.18470344" />
       <window_info id="Structure" order="1" sideWeight="0.50163937" side_tool="true" weight="0.17944622" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -425,7 +396,7 @@
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32893288" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32893288" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.32867885" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.3278328" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -753,32 +724,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/attendance/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1560">
-          <caret line="90" column="22" lean-forward="true" selection-start-line="90" selection-start-column="22" selection-end-line="90" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/customer/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-540" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AttendanceController.php">
+    <entry file="file://$PROJECT_DIR$/app/Attendance.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
-          <caret line="126" column="7" lean-forward="true" selection-start-line="126" selection-start-column="7" selection-end-line="126" selection-end-column="7" />
-          <folding>
-            <element signature="e#40#59#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="330">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="24" column="14" lean-forward="true" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
+        <state relative-caret-position="210">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
         </state>
       </provider>
     </entry>
@@ -789,10 +750,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Attendance.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/attendance/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+        <state relative-caret-position="586">
+          <caret line="79" column="47" lean-forward="true" selection-start-line="79" selection-start-column="47" selection-end-line="79" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AttendanceController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="139" lean-forward="true" selection-start-line="139" selection-end-line="139" />
+          <folding>
+            <element signature="e#40#59#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
