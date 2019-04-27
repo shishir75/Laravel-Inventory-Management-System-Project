@@ -32,23 +32,31 @@
                     <!-- left column -->
                     <div class="col-md-6">
                         <div class="card">
-                            <div class="card-header">
-                                <h3 class="card-title">
-                                    Customers
-                                    <span><a href="{{ route('admin.customer.create') }}" class="btn btn-sm btn-primary float-md-right">Add New</a></span>
-                                </h3>
-                            </div>
-                            <div class="card-body">
-                                <div class="form-group">
-                                    <label>Customers</label>
-                                    <select name="category_id" class="form-control">
-                                        <option value="" disabled selected>Select a Customer</option>
-                                        @foreach($customers as $customer)
-                                            <option value="{{ $customer->id }}">{{ $customer->name }}</option>
-                                        @endforeach
-                                    </select>
+                            <form action="{{ route('admin.invoice.create') }}" method="post">
+                                @csrf
+                                <div class="card-header">
+                                    <h3 class="card-title">
+                                        Customer
+                                        <span>
+                                            <button type="submit" class="btn btn-sm btn-info float-md-right ml-3">Create Invoice</button>
+                                            <a href="{{ route('admin.customer.create') }}" class="btn btn-sm btn-primary float-md-right">Add New</a>
+                                        </span>
+                                    </h3>
+
                                 </div>
-                            </div>
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <label>Select Customer</label>
+                                        <select name="customer_id" class="form-control">
+                                            <option value="" disabled selected>Select a Customer</option>
+                                            @foreach($customers as $customer)
+                                                <option value="{{ $customer->id }}">{{ $customer->name }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                            </form>
+
                         </div>
 
 
@@ -57,7 +65,7 @@
                                 <h3 class="card-title">
                                     <i class="fa fa-info"></i>
                                     Shopping Lists
-                                    <span class="btn btn-sm btn-info float-md-right">Create Invoice</span>
+
                                 </h3>
                             </div>
                             <!-- /.card-header -->
@@ -99,7 +107,7 @@
                                                         </button>
                                                     </td>
                                                 </form>
-                                                
+
                                                 <td>
                                                     <button class="btn btn-danger" type="button" onclick="deleteItem({{ $product->id }})">
                                                         <i class="fa fa-trash" aria-hidden="true"></i>

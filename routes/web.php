@@ -47,4 +47,6 @@ Route::group(['as'=>'admin.', 'prefix' => 'admin', 'middleware' => 'auth' ], fun
 
     Route::resource('cart', 'CartController');
 
+    Route::post('invoice', 'InvoiceController@create')->name('invoice.create');
+
 });
