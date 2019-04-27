@@ -32,7 +32,7 @@
 					</a>
 				</li>
 				<li class="nav-item has-treeview">
-					<a href="{{ route('admin.dashboard') }}" class="nav-link {{ Request::is('admin/pos') ? 'active' : '' }}">
+					<a href="{{ route('admin.pos.index') }}" class="nav-link {{ Request::is('admin/pos') ? 'active' : '' }}">
 						<i class="nav-icon fa fa-dashboard"></i>
 						<p>
 							Point of Sales (POS)
