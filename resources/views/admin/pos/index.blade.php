@@ -109,7 +109,6 @@
                                                 <a href="" class="btn btn-sm btn-danger px-2">
                                                     <i class="fa fa-trash-o" aria-hidden="true"></i>
                                                 </a>
-
                                             </td>
                                         </tr>
                                     @endforeach
@@ -117,7 +116,7 @@
 
                                 </table>
                                 <div class="alert alert-info">
-                                    <p>Quantity : 0</p>
+                                    <p>Quantity : 2</p>
                                     <p>Cost : 00.00</p>
                                     Vat : 0.00
                                 </div>
