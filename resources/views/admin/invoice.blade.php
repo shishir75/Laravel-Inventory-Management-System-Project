@@ -3,7 +3,11 @@
 @section('title', 'Invoice')
 
 @push('css')
-
+    <style>
+        .modal-lg {
+            max-width: 50% !important;
+        }
+    </style>
 @endpush
 
 @section('content')
@@ -144,8 +148,8 @@
                             <div class="row no-print">
                                 <div class="col-12">
                                     <a href="{{ route('admin.invoice.print', $customer->id) }}" target="_blank" class="btn btn-default"><i class="fa fa-print"></i> Print</a>
-                                    <button type="button" class="btn btn-success float-right"><i class="fa fa-credit-card"></i> Submit
-                                        Payment
+                                    <button type="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-success float-right"><i class="fa fa-credit-card"></i>
+                                        Submit Payment
                                     </button>
                                     <button type="button" class="btn btn-primary float-right" style="margin-right: 5px;">
                                         <i class="fa fa-download"></i> Generate PDF
@@ -161,6 +165,60 @@
         <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
+
+    <!--payment modal -->
+    <form action="{{ route('admin.invoice.final_invoice') }}" method="post">
+        @csrf
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">
+                            Invoice of {{ $customer->name }}
+                        </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <p class="text-info float-right mb-3">Payable Total : {{ Cart::total() }}</p>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label for="inputState">Payment Method</label>
+                                <select name="payment_status" class="form-control" required>
+                                    <option value="" disabled selected>Choose a Payment Method</option>
+                                    <option value="HandCash">Hand Cash</option>
+                                    <option value="Cheque">Cheque</option>
+                                    <option value="Due">Due</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="inputCity">Pay</label>
+                                <input type="number" name="pay" class="form-control">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="inputZip">Due</label>
+                                <input type="number" name="due" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <input type="hidden" name="customer_id" value="{{ $customer->id }}">
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <!--/.payment modal -->
+
+
+
 @endsection
 
 

@@ -49,5 +49,6 @@ Route::group(['as'=>'admin.', 'prefix' => 'admin', 'middleware' => 'auth' ], fun
 
     Route::post('invoice', 'InvoiceController@create')->name('invoice.create');
     Route::get('print/{customer_id}', 'InvoiceController@print')->name('invoice.print');
+    Route::post('invoice-final', 'InvoiceController@final_invoice')->name('invoice.final_invoice');
 
 });

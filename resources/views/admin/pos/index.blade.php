@@ -47,7 +47,7 @@
                                 <div class="card-body">
                                     <div class="form-group">
                                         <label>Select Customer</label>
-                                        <select name="customer_id" class="form-control">
+                                        <select name="customer_id" class="form-control" required>
                                             <option value="" disabled selected>Select a Customer</option>
                                             @foreach($customers as $customer)
                                                 <option value="{{ $customer->id }}">{{ $customer->name }}</option>
