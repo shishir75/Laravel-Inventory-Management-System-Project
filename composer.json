@@ -10,6 +10,7 @@
     "require": {
         "php": "^7.1.3",
         "brian2694/laravel-toastr": "^5.5",
+        "bumbummen99/shoppingcart": "^2.8",
         "fideloper/proxy": "^4.0",
         "intervention/image": "^2.4",
         "laravel/cashier": "^9.3",

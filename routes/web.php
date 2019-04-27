@@ -45,5 +45,6 @@ Route::group(['as'=>'admin.', 'prefix' => 'admin', 'middleware' => 'auth' ], fun
 
     Route::resource('pos', 'PosController');
 
+    Route::resource('cart', 'CartController');
 
 });

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Customer;
 use App\Product;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 
 class PosController extends Controller
@@ -18,8 +19,8 @@ class PosController extends Controller
     {
         $products = Product::with('category')->get();
         $customers = Customer::all();
-        $categories = Category::all();
-        return view('admin.pos.index', compact('products', 'customers', 'categories'));
+        $cart_products = Cart::content();
+        return view('admin.pos.index', compact('products', 'customers', 'cart_products'));
     }
 
     /**
