@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Customer;
+use App\Setting;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -28,7 +29,20 @@ class InvoiceController extends Controller
         $customer_id = $request->input('customer_id');
         $customer = Customer::findOrFail($customer_id);
         $contents = Cart::content();
-
-        return view('admin.invoice', compact('customer', 'contents'));
+        $company = Setting::latest()->first();
+        return view('admin.invoice', compact('customer', 'contents', 'company'));
     }
+
+    public function print($customer_id)
+    {
+        $customer = Customer::findOrFail($customer_id);
+        $contents = Cart::content();
+        $company = Setting::latest()->first();
+        return view('admin.print', compact('customer', 'contents', 'company'));
+    }
+
+
+
+
+
 }
