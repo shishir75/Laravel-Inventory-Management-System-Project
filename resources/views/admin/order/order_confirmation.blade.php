@@ -158,16 +158,22 @@
                             <!-- this row will not appear when printing -->
                             <div class="row no-print">
                                 <div class="col-12">
-                                    <a href="{{ route('admin.invoice.order_print', $order->id) }}" target="_blank" class="btn btn-default"><i class="fa fa-print"></i> Print</a>
+                                    @if($order->order_status === 'approved')
+                                        <a href="{{ route('admin.invoice.order_print', $order->id) }}" target="_blank" class="btn btn-default">
+                                            <i class="fa fa-print"></i> Print
+                                        </a>
+                                    @endif
                                     @if($order->order_status === 'pending')
                                         <a href="{{ route('admin.order.confirm', $order->id) }}" class="btn btn-success float-right">
                                             <i class="fa fa-credit-card"></i>
                                             Approved Payment
                                         </a>
                                     @endif
-                                    <button type="button" class="btn btn-primary float-right" style="margin-right: 5px;">
-                                        <i class="fa fa-download"></i> Generate PDF
-                                    </button>
+                                    @if($order->order_status === 'approved')
+                                        <button type="button" class="btn btn-primary float-right" style="margin-right: 5px;">
+                                            <i class="fa fa-download"></i> Generate PDF
+                                        </button>
+                                    @endif
                                 </div>
                             </div>
                         </div>
