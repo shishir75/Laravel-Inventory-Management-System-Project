@@ -271,7 +271,7 @@
 					<a href="#" class="nav-link {{ Request::is('admin/order*') ? 'active' : '' }}">
 						<i class="nav-icon fa fa-pie-chart"></i>
 						<p>
-							Sales Report
+							Order
 							<i class="right fa fa-angle-left"></i>
 						</p>
 					</a>

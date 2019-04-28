@@ -1,6 +1,6 @@
 @extends('layouts.backend.app')
 
-@section('title', 'Approved Orders')
+@section('title', 'Pending Oprders')
 
 @push('css')
     <!-- DataTables -->
@@ -18,7 +18,7 @@
                     <div class="col-sm-6 offset-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Approved Orders</li>
+                            <li class="breadcrumb-item active">Pending Oprders</li>
                         </ol>
                     </div>
                 </div>
@@ -34,7 +34,7 @@
                         <!-- general form elements -->
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">APPROVED ORDERS LISTS</h3>
+                                <h3 class="card-title">PENDING ORDERS LISTS</h3>
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
@@ -64,7 +64,7 @@
                                     </tr>
                                     </tfoot>
                                     <tbody>
-                                    @foreach($approveds as $key => $order)
+                                    @foreach($pendings as $key => $order)
                                         <tr>
                                             <td>{{ $key + 1 }}</td>
                                             <td>{{ $order->customer->name }}</td>
@@ -72,10 +72,10 @@
                                             <td>{{ $order->total_products }}</td>
                                             <td>{{ $order->total }}</td>
                                             <td>{{ $order->payment_status }}</td>
-                                            <td><span class="badge badge-success">{{ $order->order_status }}</span></td>
+                                            <td><span class="badge badge-warning">{{ $order->order_status }}</span></td>
 
                                             <td>
-                                                <a href="{{ route('admin.pos.show', $order->id) }}" class="btn btn-success">
+                                                <a href="{{ route('admin.order.show', $order->id) }}" class="btn btn-success">
                                                     <i class="fa fa-eye" aria-hidden="true"></i>
                                                 </a>
                                                 <a href="{{ route('admin.product.edit', $order->id) }}" class="btn

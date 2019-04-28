@@ -3,83 +3,41 @@
 namespace App\Http\Controllers;
 
 use App\Order;
-use Illuminate\Http\Request;
+use App\OrderDetail;
+use Brian2694\Toastr\Facades\Toastr;
 
 class OrderController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+
+    public function show($id)
     {
-        //
+        $order = Order::with('customer')->where('id', $id)->first();
+        //return $order;
+        $order_details = OrderDetail::with('product')->where('order_id', $id)->get();
+        //return $order_details;
+        return view('admin.order.order_confirmation', compact('order_details', 'order'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+
+    public function pending_order()
     {
-        //
+        $pendings = Order::latest()->with('customer')->where('order_status', 'pending')->get();
+        return view('admin.order.pending_orders', compact('pendings'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function approved_order()
     {
-        //
+        $approveds = Order::latest()->with('customer')->where('order_status', 'approved')->get();
+        return view('admin.order.approved_orders', compact('approveds'));
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Order  $order
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Order $order)
+    public function order_confirm($id)
     {
-        //
-    }
+        $order = Order::findOrFail($id);
+        $order->order_status = 'approved';
+        $order->save();
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Order  $order
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Order $order)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Order  $order
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Order $order)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Order  $order
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Order $order)
-    {
-        //
+        Toastr::success('Your order has been Approved! Please delivery the products', 'Success');
+        return redirect()->back();
     }
 }

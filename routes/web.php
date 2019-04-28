@@ -44,9 +44,11 @@ Route::group(['as'=>'admin.', 'prefix' => 'admin', 'middleware' => 'auth' ], fun
     Route::put('setting/{id}', 'SettingController@update')->name('setting.update');
 
     Route::resource('pos', 'PosController');
-    Route::get('order/pending', 'PosController@pending_order')->name('order.pending');
-    Route::get('order/approved', 'PosController@approved_order')->name('order.approved');
-    Route::get('order/confirm/{id}', 'PosController@order_confirm')->name('order.confirm');
+
+    Route::get('order/show/{id}', 'OrderController@show')->name('order.show');
+    Route::get('order/pending', 'OrderController@pending_order')->name('order.pending');
+    Route::get('order/approved', 'OrderController@approved_order')->name('order.approved');
+    Route::get('order/confirm/{id}', 'OrderController@order_confirm')->name('order.confirm');
 
     Route::resource('cart', 'CartController');
 
