@@ -49,6 +49,7 @@ Route::group(['as'=>'admin.', 'prefix' => 'admin', 'middleware' => 'auth' ], fun
     Route::get('order/pending', 'OrderController@pending_order')->name('order.pending');
     Route::get('order/approved', 'OrderController@approved_order')->name('order.approved');
     Route::get('order/confirm/{id}', 'OrderController@order_confirm')->name('order.confirm');
+    Route::delete('order/delete/{id}', 'OrderController@destroy')->name('order.destroy');
 
     Route::resource('cart', 'CartController');
 

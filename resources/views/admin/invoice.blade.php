@@ -71,11 +71,8 @@
                                 </div>
                                 <!-- /.col -->
                                 <div class="col-sm-4 invoice-col">
-                                    <b>Invoice #007612</b><br>
-                                    <br>
-                                    <b>Order ID:</b> 4F3S8J<br>
-                                    <b>Payment Due:</b> 2/22/2014<br>
-                                    <b>Account:</b> 968-34567
+                                    <b>Payment Due:</b> {{ Cart::total() }}<br>
+                                    <b>Account:</b> {{ $customer->account_number }}
                                 </div>
                                 <!-- /.col -->
                             </div>
@@ -117,8 +114,6 @@
                                 <div class="col-8"></div>
                                 <!-- /.col -->
                                 <div class="col-4">
-                                    <p class="lead">Amount Due 2/22/2014</p>
-
                                     <div class="table-responsive">
                                         <table class="table">
                                             <tr>
@@ -128,10 +123,6 @@
                                             <tr>
                                                 <th>Tax (21%)</th>
                                                 <td class="text-right">{{ Cart::tax() }}</td>
-                                            </tr>
-                                            <tr>
-                                                <th>Shipping:</th>
-                                                <td class="text-right">00.00</td>
                                             </tr>
                                             <tr>
                                                 <th>Total:</th>

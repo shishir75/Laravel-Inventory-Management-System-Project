@@ -46,13 +46,9 @@
                                         <th>Image</th>
                                         <th>Email</th>
                                         <th>Phone</th>
-                                        <th>Address</th>
                                         <th>City</th>
                                         <th>Shop Name</th>
                                         <th>Account Holder</th>
-                                        <th>Account Number</th>
-                                        <th>Bank Name</th>
-                                        <th>Bank Branch</th>
                                         <th>Actions</th>
                                     </tr>
                                     </thead>
@@ -63,13 +59,9 @@
                                         <th>Image</th>
                                         <th>Email</th>
                                         <th>Phone</th>
-                                        <th>Address</th>
                                         <th>City</th>
                                         <th>Shop Name</th>
                                         <th>Account Holder</th>
-                                        <th>Account Number</th>
-                                        <th>Bank Name</th>
-                                        <th>Bank Branch</th>
                                         <th>Actions</th>
                                     </tr>
                                     </tfoot>
@@ -83,13 +75,9 @@
                                             </td>
                                             <td>{{ $customer->email }}</td>
                                             <td>0{{ $customer->phone }}</td>
-                                            <td>{{ $customer->address }}</td>
                                             <td>{{ $customer->city }}</td>
                                             <td>{{ $customer->shop_name }}</td>
                                             <td>{{ $customer->account_holder }}</td>
-                                            <td>{{ $customer->account_number }}</td>
-                                            <td>{{ $customer->bank_name }}</td>
-                                            <td>{{ $customer->bank_branch }}</td>
                                             <td>
                                                 <a href="{{ route('admin.customer.show', $customer->id) }}" class="btn btn-success">
                                                     <i class="fa fa-eye" aria-hidden="true"></i>

@@ -18,12 +18,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Invoice</h1>
+                        <h1>Order Details</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Order</li>
+                            <li class="breadcrumb-item active">Order Details</li>
                         </ol>
                     </div>
                 </div>
@@ -49,7 +49,14 @@
                             <!-- info row -->
                             <div class="row invoice-info">
                                 <div class="col-sm-4 invoice-col">
-
+                                    From
+                                    <address>
+                                        <strong>Admin, {{ config('app.name') }}</strong><br>
+                                        {{ $company->address }}<br>
+                                        {{ $company->city }} - {{ $company->zip_code }}, {{ $company->country }}<br>
+                                        Phone: (+880) {{ $company->mobile }} {{ $company->phone !== null ? ', +88'.$company->phone : ''  }}<br>
+                                        Email: {{ $company->email }}
+                                    </address>
                                 </div>
                                 <!-- /.col -->
                                 <div class="col-sm-4 invoice-col">
@@ -64,8 +71,7 @@
                                 </div>
                                 <!-- /.col -->
                                 <div class="col-sm-4 invoice-col">
-                                    <b>Invoice #{{ $order->created_at->format('Ymd') }}{{ $order->id }}</b><br>
-                                    <br>
+                                    <b>Invoice #{{ $order->created_at->format('Ymd') }}{{ $order->id }}</b><br><br>
                                     <b>Order ID:</b> {{ number_format($order->id) }}<br>
                                     <b>Order Status:</b> <span class="badge {{ $order->order_status == 'approved' ? 'badge-success' : 'badge-warning'  }}">{{ $order->order_status }}</span><br>
                                     <b>Account:</b> {{ $order->customer->account_number }}
@@ -99,7 +105,6 @@
                                                     <td>{{ number_format($unit_cost * $order_detail->quantity, 2) }}</td>
                                                 </tr>
                                             @endforeach
-
                                         </tbody>
                                     </table>
                                 </div>
@@ -140,12 +145,8 @@
                                                 <td class="text-right">{{ number_format($order->vat, 2) }}</td>
                                             </tr>
                                             <tr>
-                                                <th>Shipping:</th>
-                                                <td class="text-right">{{ $shipping = number_format(($order->total * 10) / 100, 2) }}</td>
-                                            </tr>
-                                            <tr>
                                                 <th>Total:</th>
-                                                <td class="text-right">{{ round($order->total + $shipping ) }} Taka</td>
+                                                <td class="text-right">{{ round($order->total) }} Taka</td>
                                             </tr>
                                         </table>
                                     </div>

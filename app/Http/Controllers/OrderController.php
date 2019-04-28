@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Order;
 use App\OrderDetail;
+use App\Setting;
 use Brian2694\Toastr\Facades\Toastr;
 
 class OrderController extends Controller
@@ -15,7 +16,8 @@ class OrderController extends Controller
         //return $order;
         $order_details = OrderDetail::with('product')->where('order_id', $id)->get();
         //return $order_details;
-        return view('admin.order.order_confirmation', compact('order_details', 'order'));
+        $company = Setting::latest()->first();
+        return view('admin.order.order_confirmation', compact('order_details', 'order', 'company'));
     }
 
 
@@ -37,7 +39,15 @@ class OrderController extends Controller
         $order->order_status = 'approved';
         $order->save();
 
-        Toastr::success('Your order has been Approved! Please delivery the products', 'Success');
+        Toastr::success('Order has been Approved! Please delivery the products', 'Success');
         return redirect()->back();
     }
+
+    public function destroy($id)
+    {
+        Order::findOrFail($id)->delete();
+        Toastr::success('Order has been deleted', 'Success');
+        return redirect()->back();
+    }
+
 }
