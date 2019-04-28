@@ -267,8 +267,8 @@
 					</ul>
 				</li>
 
-				<li class="nav-item has-treeview {{ Request::is('admin/sales*') ? 'menu-open' : '' }}">
-					<a href="#" class="nav-link {{ Request::is('admin/sales*') ? 'active' : '' }}">
+				<li class="nav-item has-treeview {{ Request::is('admin/order*') ? 'menu-open' : '' }}">
+					<a href="#" class="nav-link {{ Request::is('admin/order*') ? 'active' : '' }}">
 						<i class="nav-icon fa fa-pie-chart"></i>
 						<p>
 							Sales Report
@@ -277,15 +277,15 @@
 					</a>
 					<ul class="nav nav-treeview">
 						<li class="nav-item">
-							<a href="#" class="nav-link {{ Request::is('admin/sales/create') ? 'active' : '' }}">
+							<a href="{{ route('admin.order.pending') }}" class="nav-link {{ Request::is('admin/order/pending') ? 'active' : '' }}">
 								<i class="fa fa-circle-o nav-icon"></i>
-								<p>First</p>
+								<p>Pending Orders</p>
 							</a>
 						</li>
 						<li class="nav-item">
-							<a href="#" class="nav-link {{ Request::is('admin/sales') ? 'active' : '' }}">
+							<a href="{{ route('admin.order.approved') }}" class="nav-link {{ Request::is('admin/order/approved') ? 'active' : '' }}">
 								<i class="fa fa-circle-o nav-icon"></i>
-								<p>Second</p>
+								<p>Approved Orders</p>
 							</a>
 						</li>
 					</ul>
