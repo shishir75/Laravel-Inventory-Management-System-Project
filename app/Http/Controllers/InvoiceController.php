@@ -44,6 +44,17 @@ class InvoiceController extends Controller
         return view('admin.print', compact('customer', 'contents', 'company'));
     }
 
+    public function order_print($order_id)
+    {
+        $order = Order::with('customer')->where('id', $order_id)->first();
+        //return $order;
+        $order_details = OrderDetail::with('product')->where('order_id', $order_id)->get();
+        //return $order_details;
+        $company = Setting::latest()->first();
+        return view('admin.order.print', compact('order_details', 'order', 'company'));
+    }
+
+
     public function final_invoice(Request $request)
     {
         $inputs = $request->except('_token');
@@ -61,11 +72,15 @@ class InvoiceController extends Controller
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
+        $total = (float) Cart::total();
+        $pay = $request->input('pay');
+        $due = (float)($total - $pay) ;
+
         $order = new Order();
         $order->customer_id = $request->input('customer_id');
         $order->payment_status = $request->input('payment_status');
-        $order->pay = $request->input('pay');
-        $order->due = $request->input('due');
+        $order->pay = $pay;
+        $order->due = $due;
         $order->order_date = date('Y-m-d');
         $order->order_status = 'pending';
         $order->total_products = Cart::count();
@@ -91,7 +106,7 @@ class InvoiceController extends Controller
         Cart::destroy();
 
         Toastr::success('Invoice created successfully', 'Success');
-        return redirect()->route('admin.dashboard');
+        return redirect()->route('admin.order.pending');
 
 
     }

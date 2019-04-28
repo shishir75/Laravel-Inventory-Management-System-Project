@@ -72,6 +72,7 @@
                                 <!-- /.col -->
                                 <div class="col-sm-4 invoice-col">
                                     <b>Payment Due:</b> {{ Cart::total() }}<br>
+                                    <b>Order Status:</b> <span class="badge badge-warning">Pending</span><br>
                                     <b>Account:</b> {{ $customer->account_number }}
                                 </div>
                                 <!-- /.col -->
@@ -178,7 +179,7 @@
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-6">
                                 <label for="inputState">Payment Method</label>
                                 <select name="payment_status" class="form-control" required >
                                     <option value="" disabled selected>Choose a Payment Method</option>
@@ -187,13 +188,9 @@
                                     <option value="Due">Due</option>
                                 </select>
                             </div>
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-6">
                                 <label for="inputCity">Pay</label>
                                 <input type="number" name="pay" class="form-control">
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label for="inputZip">Due</label>
-                                <input type="number" name="due" class="form-control">
                             </div>
                         </div>
                     </div>

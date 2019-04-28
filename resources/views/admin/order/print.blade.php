@@ -47,7 +47,7 @@
                                 <strong>Admin, {{ config('app.name') }}</strong><br>
                                 {{ $company->address }}<br>
                                 {{ $company->city }} - {{ $company->zip_code }}, {{ $company->country }}<br>
-                                Phone: (+880) {{ $company->mobile }} {{ $company->phone !== null ? ', +88'.$company->phone : ''  }}<br>
+                                Phone: (+880) {{ $company->mobile }} {{ $company->phone !== null ? ', +880'.$company->phone : ''  }}<br>
                                 Email: {{ $company->email }}
                             </address>
                         </div>
@@ -55,18 +55,19 @@
                         <div class="col-sm-4 invoice-col">
                             To
                             <address>
-                                <strong>{{ $customer->name }}</strong><br>
-                                {{ $customer->address }}<br>
-                                {{ $customer->city }}<br>
-                                Phone: (+880) {{ $customer->phone }}<br>
-                                Email: {{ $customer->email }}
+                                <strong>{{ $order->customer->name }}</strong><br>
+                                {{ $order->customer->address }}<br>
+                                {{ $order->customer->city }}<br>
+                                Phone: (+880) {{ $order->customer->phone }}<br>
+                                Email: {{ $order->customer->email }}
                             </address>
                         </div>
                         <!-- /.col -->
                         <div class="col-sm-4 invoice-col">
-                            <b>Payment Due:</b> {{ Cart::total() }}<br>
-                            <b>Order Status:</b> <span class="badge badge-warning">Pending</span><br>
-                            <b>Account:</b> {{ $customer->account_number }}
+                            <b>Invoice #IMS-{{ $order->created_at->format('Ymd') }}{{ $order->id }}</b><br><br>
+                            <b>Order ID:</b> {{ str_pad($order->id,9,"0",STR_PAD_LEFT) }}<br>
+                            <b>Order Status:</b> <span class="badge {{ $order->order_status == 'approved' ? 'badge-success' : 'badge-warning'  }}">{{ $order->order_status }}</span><br>
+                            <b>Account:</b> {{ $order->customer->account_number }}
                         </div>
                         <!-- /.col -->
                     </div>
@@ -79,23 +80,24 @@
                                 <thead>
                                 <tr>
                                     <th>S.N</th>
-                                    <th>Item</th>
+                                    <th>Product Name</th>
+                                    <th>Product Code</th>
                                     <th>Quantity</th>
                                     <th>Unit Cost</th>
                                     <th>Subtotal</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($contents as $content)
+                                @foreach($order_details as $order_detail)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $content->name }}</td>
-                                        <td>{{ $content->qty }}</td>
-                                        <td>{{ number_format($content->price, 2) }}</td>
-                                        <td>{{ $content->subtotal() }}</td>
+                                        <td>{{ $order_detail->product->name }}</td>
+                                        <td>{{ $order_detail->product->code }}</td>
+                                        <td>{{ $order_detail->quantity }}</td>
+                                        <td>{{ $unit_cost = number_format($order_detail->unit_cost, 2) }}</td>
+                                        <td>{{ number_format($unit_cost * $order_detail->quantity, 2) }}</td>
                                     </tr>
                                 @endforeach
-
                                 </tbody>
                             </table>
                         </div>
@@ -105,22 +107,39 @@
 
                     <div class="row">
                         <!-- accepted payments column -->
-                        <div class="col-8"></div>
-                        <!-- /.col -->
                         <div class="col-4">
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <tr>
+                                        <th style="width:50%">Payment Method:</th>
+                                        <td class="text-right">{{ $order->payment_status }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Pay</th>
+                                        <td class="text-right">{{ number_format($order->pay, 2) }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Due</th>
+                                        <td class="text-right">{{ number_format($order->due, 2) }}</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-4 offset-4">
                             <div class="table-responsive">
                                 <table class="table">
                                     <tr>
                                         <th style="width:50%">Subtotal:</th>
-                                        <td class="text-right">{{ Cart::subtotal() }}</td>
+                                        <td class="text-right">{{ number_format($order->sub_total, 2) }}</td>
                                     </tr>
                                     <tr>
                                         <th>Tax (21%)</th>
-                                        <td class="text-right">{{ Cart::tax() }}</td>
+                                        <td class="text-right">{{ number_format($order->vat, 2) }}</td>
                                     </tr>
                                     <tr>
                                         <th>Total:</th>
-                                        <td class="text-right">{{ Cart::total() }}</td>
+                                        <td class="text-right">{{ round($order->total) }} Taka</td>
                                     </tr>
                                 </table>
                             </div>
