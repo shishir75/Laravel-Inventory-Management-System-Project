@@ -170,9 +170,9 @@
                                         </a>
                                     @endif
                                     @if($order->order_status === 'approved')
-                                        <button type="button" class="btn btn-primary float-right" style="margin-right: 5px;">
+                                        <a href="{{ route('admin.order.download', $order->id) }}" target="_blank" class="btn btn-primary float-right" style="margin-right: 5px;">
                                             <i class="fa fa-download"></i> Generate PDF
-                                        </button>
+                                        </a>
                                     @endif
                                 </div>
                             </div>

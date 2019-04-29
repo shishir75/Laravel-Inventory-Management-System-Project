@@ -143,9 +143,6 @@
                                     <button type="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-success float-right"><i class="fa fa-credit-card"></i>
                                         Submit Payment
                                     </button>
-                                    <button type="button" class="btn btn-primary float-right" style="margin-right: 5px;">
-                                        <i class="fa fa-download"></i> Generate PDF
-                                    </button>
                                 </div>
                             </div>
                         </div>

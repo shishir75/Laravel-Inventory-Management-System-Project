@@ -50,6 +50,7 @@ Route::group(['as'=>'admin.', 'prefix' => 'admin', 'middleware' => 'auth' ], fun
     Route::get('order/approved', 'OrderController@approved_order')->name('order.approved');
     Route::get('order/confirm/{id}', 'OrderController@order_confirm')->name('order.confirm');
     Route::delete('order/delete/{id}', 'OrderController@destroy')->name('order.destroy');
+    Route::get('order/download/{id}', 'OrderController@download')->name('order.download');
 
     Route::resource('cart', 'CartController');
 
