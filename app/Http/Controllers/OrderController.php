@@ -8,7 +8,6 @@ use App\Setting;
 use Barryvdh\DomPDF\Facade as PDF;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\URL;
 
 class OrderController extends Controller
 {
@@ -73,5 +72,22 @@ class OrderController extends Controller
         return redirect()->back();
 
     }
+
+    // for sales report
+    public function today_sales()
+    {
+
+    }
+
+    public function monthly_sales()
+    {
+
+    }
+
+    public function total_sales()
+    {
+
+    }
+
 
 }

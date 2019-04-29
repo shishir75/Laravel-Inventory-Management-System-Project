@@ -52,6 +52,10 @@ Route::group(['as'=>'admin.', 'prefix' => 'admin', 'middleware' => 'auth' ], fun
     Route::delete('order/delete/{id}', 'OrderController@destroy')->name('order.destroy');
     Route::get('order/download/{id}', 'OrderController@download')->name('order.download');
 
+    Route::get('sales-today', 'OrderController@today_sales')->name('sales.today');
+    Route::get('sales-monthly/{month?}', 'OrderController@monthly_sales')->name('sales.monthly');
+    Route::get('sales-total','OrderController@total_sales')->name('sales.total');
+
     Route::resource('cart', 'CartController');
 
     Route::post('invoice', 'InvoiceController@create')->name('invoice.create');
