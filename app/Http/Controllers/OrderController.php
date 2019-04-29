@@ -7,6 +7,7 @@ use App\OrderDetail;
 use App\Setting;
 use Barryvdh\DomPDF\Facade as PDF;
 use Brian2694\Toastr\Facades\Toastr;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 class OrderController extends Controller
@@ -76,17 +77,36 @@ class OrderController extends Controller
     // for sales report
     public function today_sales()
     {
+        $today = date('2019-04-29');
 
+        $balance = Order::where('order_date', $today)->get();
+
+        $orders = DB::table('orders')
+            ->join('order_details', 'orders.id', '=', 'order_details.order_id')
+            ->join('products', 'order_details.product_id', '=', 'products.id')
+            ->join('customers', 'orders.customer_id', '=', 'customers.id')
+            ->select('orders.pay', 'orders.due','customers.name as customer_name', 'products.name AS product_name', 'order_details.*')
+            ->where('orders.order_date' , '=', $today)
+            ->orderBy('order_details.created_at', 'desc')
+            ->get();
+
+        return view('admin.sales.today', compact('orders', 'balance'));
     }
 
-    public function monthly_sales()
+    public function monthly_sales($month = null)
     {
-
+        if ($month == null)
+        {
+            $month = date('F');
+        }
+        $expenses = Expense::latest()->where('month', $month)->get();
+        return view('admin.expense.month', compact('expenses', 'month'));
     }
 
     public function total_sales()
     {
-
+        $expenses = Expense::latest()->get();
+        return view('admin.expense.index', compact('expenses'));
     }
 
 
