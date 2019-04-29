@@ -55,7 +55,7 @@
                                         <th>Quantity</th>
                                         <th>Total</th>
                                         <th>Time</th>
-                                        <th>Actions</th>
+                                        <th>Delete</th>
                                     </tr>
                                     </thead>
                                     <tfoot>
@@ -66,7 +66,7 @@
                                         <th>Quantity</th>
                                         <th>Total</th>
                                         <th>Time</th>
-                                        <th>Actions</th>
+                                        <th>Delete</th>
                                     </tr>
                                     </tfoot>
                                     <tbody>
@@ -77,12 +77,8 @@
                                             <td>{{ $order->customer_name }}</td>
                                             <td>{{ $order->quantity }}</td>
                                             <td>{{ number_format($order->total, 2) }}</td>
-                                            <td>{{ $order->created_at }}</td>
+                                            <td>{{ date('h:i:s A', strtotime($order->created_at)) }}</td>
                                             <td>
-                                                <a href="{{ route('admin.expense.edit', $order->id) }}" class="btn
-                                                    btn-info">
-                                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                                                </a>
                                                 <button class="btn btn-danger" type="button" onclick="deleteItem({{ $order->id }})">
                                                     <i class="fa fa-trash" aria-hidden="true"></i>
                                                 </button>
