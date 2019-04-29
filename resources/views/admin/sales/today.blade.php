@@ -38,7 +38,7 @@
                                     TODAY'S SALES LISTS
                                     <small class="text-danger pull-right">
                                         <span class="badge badge-info">Total Sales : {{ $balance->sum('total') }} Taka</span>
-                                        <span class="badge badge-success">Pay : {{ $balance->sum('pay') }} Taka</span>
+                                        <span class="badge badge-success">Paid : {{ $balance->sum('pay') }} Taka</span>
                                         <span class="badge badge-warning">Due : {{ $balance->sum('due') }} Taka</span>
                                     </small>
                                     <small class="text-primary">{{ date('d F Y') }}</small>
