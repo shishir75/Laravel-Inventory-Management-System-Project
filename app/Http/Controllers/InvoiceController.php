@@ -72,9 +72,12 @@ class InvoiceController extends Controller
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
-        $total = (float) Cart::total();
+        $sub_total = str_replace(',', '', Cart::subtotal());
+        $tax = str_replace(',', '', Cart::tax());
+        $total = str_replace(',', '', Cart::total());
+
         $pay = $request->input('pay');
-        $due = (float)($total - $pay) ;
+        $due = $total - $pay;
 
         $order = new Order();
         $order->customer_id = $request->input('customer_id');
@@ -84,9 +87,9 @@ class InvoiceController extends Controller
         $order->order_date = date('Y-m-d');
         $order->order_status = 'pending';
         $order->total_products = Cart::count();
-        $order->sub_total = Cart::subtotal();
-        $order->vat = Cart::tax();
-        $order->total = Cart::total();
+        $order->sub_total = $sub_total;
+        $order->vat = $tax;
+        $order->total = $total;
         $order->save();
 
         $order_id = $order->id;
