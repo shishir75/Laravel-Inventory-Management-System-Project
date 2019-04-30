@@ -77,7 +77,7 @@ class OrderController extends Controller
     // for sales report
     public function today_sales()
     {
-        $today = date('2019-04-29');
+        $today = date('Y-m-d');
 
         $balance = Order::where('order_date', $today)->get();
 
