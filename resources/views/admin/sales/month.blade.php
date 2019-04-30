@@ -67,6 +67,7 @@
                                     <tr>
                                         <th>Serial</th>
                                         <th>Product Title</th>
+                                        <th>Image</th>
                                         <th>Customer Name</th>
                                         <th>Quantity</th>
                                         <th>Total</th>
@@ -78,6 +79,7 @@
                                     <tr>
                                         <th>Serial</th>
                                         <th>Product Title</th>
+                                        <th>Image</th>
                                         <th>Customer Name</th>
                                         <th>Quantity</th>
                                         <th>Total</th>
@@ -90,12 +92,15 @@
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $order->product_name }}</td>
+                                            <td>
+                                                <img class="img-rounded" width="40" height="30" src="{{ URL::asset('storage/product/'. $order->image) }}" alt="{{ $order->product_name }}">
+                                            </td>
                                             <td>{{ $order->customer_name }}</td>
                                             <td>{{ $order->quantity }}</td>
                                             <td>{{ number_format($order->total, 2) }}</td>
                                             <td>{{ date('d-M-Y h:i:s A', strtotime($order->created_at)) }}</td>
                                             <td>
-                                                <button class="btn btn-danger" type="button" onclick="deleteItem({{ $order->id }})">
+                                                <button class="btn btn-sm btn-danger" type="button" onclick="deleteItem({{ $order->id }})">
                                                     <i class="fa fa-trash" aria-hidden="true"></i>
                                                 </button>
                                                 <form id="delete-form-{{ $order->id }}" action="{{ route('admin.expense.destroy', $order->id) }}" method="post"
