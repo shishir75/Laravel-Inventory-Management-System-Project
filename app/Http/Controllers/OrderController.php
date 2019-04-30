@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Expense;
 use App\Order;
 use App\OrderDetail;
 use App\Setting;
@@ -95,12 +96,27 @@ class OrderController extends Controller
 
     public function monthly_sales($month = null)
     {
+
         if ($month == null)
         {
-            $month = date('F');
+            $month = date('m');
+        } else {
+            $month = date('m', strtotime($month));
         }
-        $expenses = Expense::latest()->where('month', $month)->get();
-        return view('admin.expense.month', compact('expenses', 'month'));
+
+
+        $balance = Order::whereMonth('order_date', $month)->get();
+        //$orders = Order::latest()->whereMonth('created_at','=', $month)->get();
+        $orders = DB::table('orders')
+            ->join('order_details', 'orders.id', '=', 'order_details.order_id')
+            ->join('products', 'order_details.product_id', '=', 'products.id')
+            ->join('customers', 'orders.customer_id', '=', 'customers.id')
+            ->select('customers.name as customer_name', 'products.name AS product_name', 'order_details.*')
+            ->whereMonth('orders.created_at' , '=', $month)
+            ->orderBy('order_details.created_at', 'desc')
+            ->get();
+
+        return view('admin.sales.month', compact('orders', 'month', 'balance'));
     }
 
     public function total_sales()

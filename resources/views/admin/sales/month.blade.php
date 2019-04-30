@@ -35,25 +35,29 @@
                     <div class="col-md-12">
                         <!-- general form elements -->
                         <div class="mb-3">
-                            <a href="{{ route('admin.expense.month', 'january') }}" class="btn btn-info">January</a>
-                            <a href="{{ route('admin.expense.month', 'february') }}" class="btn btn-primary">February</a>
-                            <a href="{{ route('admin.expense.month', 'march') }}" class="btn btn-secondary">March</a>
-                            <a href="{{ route('admin.expense.month', 'april') }}" class="btn btn-warning">April</a>
-                            <a href="{{ route('admin.expense.month', 'may') }}" class="btn btn-info">May</a>
-                            <a href="{{ route('admin.expense.month', 'june') }}" class="btn btn-success">June</a>
-                            <a href="{{ route('admin.expense.month', 'july') }}" class="btn btn-danger">July</a>
-                            <a href="{{ route('admin.expense.month', 'august') }}" class="btn btn-primary">August</a>
-                            <a href="{{ route('admin.expense.month', 'september') }}" class="btn btn-info">September</a>
-                            <a href="{{ route('admin.expense.month', 'october') }}" class="btn btn-secondary">October</a>
-                            <a href="{{ route('admin.expense.month', 'november') }}" class="btn btn-warning">November</a>
-                            <a href="{{ route('admin.expense.month', 'december') }}" class="btn btn-danger">December</a>
+                            <a href="{{ route('admin.sales.monthly', 'january') }}" class="btn btn-info">January</a>
+                            <a href="{{ route('admin.sales.monthly', 'february') }}" class="btn btn-primary">February</a>
+                            <a href="{{ route('admin.sales.monthly', 'march') }}" class="btn btn-secondary">March</a>
+                            <a href="{{ route('admin.sales.monthly', 'april') }}" class="btn btn-warning">April</a>
+                            <a href="{{ route('admin.sales.monthly', 'may') }}" class="btn btn-info">May</a>
+                            <a href="{{ route('admin.sales.monthly', 'june') }}" class="btn btn-success">June</a>
+                            <a href="{{ route('admin.sales.monthly', 'july') }}" class="btn btn-danger">July</a>
+                            <a href="{{ route('admin.sales.monthly', 'august') }}" class="btn btn-primary">August</a>
+                            <a href="{{ route('admin.sales.monthly', 'september') }}" class="btn btn-info">September</a>
+                            <a href="{{ route('admin.sales.monthly', 'october') }}" class="btn btn-secondary">October</a>
+                            <a href="{{ route('admin.sales.monthly', 'november') }}" class="btn btn-warning">November</a>
+                            <a href="{{ route('admin.sales.monthly', 'december') }}" class="btn btn-danger">December</a>
                         </div>
 
                         <div class="card">
                             <div class="card-header">
                                 <h3 class="card-title">
-                                    <strong class="text-danger">{{ strtoupper($month) }}</strong> EXPENSES LISTS
-                                    <small class="text-danger pull-right">Total Expenses : {{ $expenses->sum('amount') }} Taka</small>
+                                    <strong class="text-danger">{{ strtoupper(date("F", mktime(0, 0, 0, $month, 10))) }}</strong> SALES LISTS
+                                    <small class="text-danger pull-right">
+                                        <span class="badge badge-info">Total Sales : {{ $balance->sum('total') }} Taka</span>
+                                        <span class="badge badge-success">Paid : {{ $balance->sum('pay') }} Taka</span>
+                                        <span class="badge badge-warning">Due : {{ $balance->sum('due') }} Taka</span>
+                                    </small>
                                 </h3>
                             </div>
                             <!-- /.card-header -->
@@ -62,37 +66,39 @@
                                     <thead>
                                     <tr>
                                         <th>Serial</th>
-                                        <th>Expense Title</th>
-                                        <th>Amount</th>
-                                        <th>Date</th>
-                                        <th>Actions</th>
+                                        <th>Product Title</th>
+                                        <th>Customer Name</th>
+                                        <th>Quantity</th>
+                                        <th>Total</th>
+                                        <th>Time</th>
+                                        <th>Delete</th>
                                     </tr>
                                     </thead>
                                     <tfoot>
                                     <tr>
                                         <th>Serial</th>
-                                        <th>Expense Title</th>
-                                        <th>Amount</th>
-                                        <th>Month</th>
-                                        <th>Actions</th>
+                                        <th>Product Title</th>
+                                        <th>Customer Name</th>
+                                        <th>Quantity</th>
+                                        <th>Total</th>
+                                        <th>Time</th>
+                                        <th>Delete</th>
                                     </tr>
                                     </tfoot>
                                     <tbody>
-                                    @foreach($expenses as $key => $expense)
+                                    @foreach($orders as $order)
                                         <tr>
-                                            <td>{{ $key + 1 }}</td>
-                                            <td>{{ $expense->name }}</td>
-                                            <td>{{ number_format($expense->amount, 2) }}</td>
-                                            <td>{{ $expense->date->toFormattedDateString() }}</td>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $order->product_name }}</td>
+                                            <td>{{ $order->customer_name }}</td>
+                                            <td>{{ $order->quantity }}</td>
+                                            <td>{{ number_format($order->total, 2) }}</td>
+                                            <td>{{ date('d-M-Y h:i:s A', strtotime($order->created_at)) }}</td>
                                             <td>
-                                                <a href="{{ route('admin.expense.edit', $expense->id) }}" class="btn
-													btn-info">
-                                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                                                </a>
-                                                <button class="btn btn-danger" type="button" onclick="deleteItem({{ $expense->id }})">
+                                                <button class="btn btn-danger" type="button" onclick="deleteItem({{ $order->id }})">
                                                     <i class="fa fa-trash" aria-hidden="true"></i>
                                                 </button>
-                                                <form id="delete-form-{{ $expense->id }}" action="{{ route('admin.expense.destroy', $expense->id) }}" method="post"
+                                                <form id="delete-form-{{ $order->id }}" action="{{ route('admin.expense.destroy', $order->id) }}" method="post"
                                                       style="display:none;">
                                                     @csrf
                                                     @method('DELETE')
