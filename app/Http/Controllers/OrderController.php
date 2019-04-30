@@ -104,9 +104,8 @@ class OrderController extends Controller
             $month = date('m', strtotime($month));
         }
 
-
         $balance = Order::whereMonth('order_date', $month)->get();
-        //$orders = Order::latest()->whereMonth('created_at','=', $month)->get();
+
         $orders = DB::table('orders')
             ->join('order_details', 'orders.id', '=', 'order_details.order_id')
             ->join('products', 'order_details.product_id', '=', 'products.id')
@@ -121,8 +120,17 @@ class OrderController extends Controller
 
     public function total_sales()
     {
-        $expenses = Expense::latest()->get();
-        return view('admin.expense.index', compact('expenses'));
+        $balance = Order::all();
+
+        $orders = DB::table('orders')
+            ->join('order_details', 'orders.id', '=', 'order_details.order_id')
+            ->join('products', 'order_details.product_id', '=', 'products.id')
+            ->join('customers', 'orders.customer_id', '=', 'customers.id')
+            ->select('customers.name as customer_name', 'products.name AS product_name', 'order_details.*')
+            ->orderBy('order_details.created_at', 'desc')
+            ->get();
+
+        return view('admin.sales.index', compact('balance', 'orders'));
     }
 
 

@@ -1,6 +1,6 @@
 @extends('layouts.backend.app')
 
-@section('title', 'Expenses')
+@section('title', 'Total Sales')
 
 @push('css')
     <!-- DataTables -->
@@ -18,7 +18,7 @@
                     <div class="col-sm-6 offset-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Expenses</li>
+                            <li class="breadcrumb-item active">Total Sales</li>
                         </ol>
                     </div>
                 </div>
@@ -35,8 +35,12 @@
                         <div class="card">
                             <div class="card-header">
                                 <h3 class="card-title">
-                                    EXPENSES LISTS
-                                    <small class="text-danger pull-right">Total Expenses : {{ $expenses->sum('amount') }} Taka</small>
+                                    TOTAL SALES REPORT
+                                    <small class="text-danger pull-right">
+                                        <span class="badge badge-info">Total Sales : {{ $balance->sum('total') }} Taka</span>
+                                        <span class="badge badge-success">Paid : {{ $balance->sum('pay') }} Taka</span>
+                                        <span class="badge badge-warning">Due : {{ $balance->sum('due') }} Taka</span>
+                                    </small>
                                 </h3>
                             </div>
                             <!-- /.card-header -->
@@ -45,43 +49,39 @@
                                     <thead>
                                     <tr>
                                         <th>Serial</th>
-                                        <th>Expense Title</th>
-                                        <th>Amount</th>
-                                        <th>Month</th>
-                                        <th>Year</th>
-                                        <th>Date</th>
-                                        <th>Actions</th>
+                                        <th>Product Title</th>
+                                        <th>Customer Name</th>
+                                        <th>Quantity</th>
+                                        <th>Total</th>
+                                        <th>Time</th>
+                                        <th>Delete</th>
                                     </tr>
                                     </thead>
                                     <tfoot>
                                     <tr>
                                         <th>Serial</th>
-                                        <th>Expense Title</th>
-                                        <th>Amount</th>
-                                        <th>Month</th>
-                                        <th>Year</th>
-                                        <th>Date</th>
-                                        <th>Actions</th>
+                                        <th>Product Title</th>
+                                        <th>Customer Name</th>
+                                        <th>Quantity</th>
+                                        <th>Total</th>
+                                        <th>Time</th>
+                                        <th>Delete</th>
                                     </tr>
                                     </tfoot>
                                     <tbody>
-                                    @foreach($expenses as $key => $expense)
+                                    @foreach($orders as $order)
                                         <tr>
-                                            <td>{{ $key + 1 }}</td>
-                                            <td>{{ $expense->name }}</td>
-                                            <td>{{ number_format($expense->amount, 2) }}</td>
-                                            <td>{{ $expense->month }}</td>
-                                            <td>{{ $expense->year }}</td>
-                                            <td>{{ $expense->created_at->format('d M Y h:i:s A') }}</td>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $order->product_name }}</td>
+                                            <td>{{ $order->customer_name }}</td>
+                                            <td>{{ $order->quantity }}</td>
+                                            <td>{{ number_format($order->total, 2) }}</td>
+                                            <td>{{ date('d-M-Y h:i:s A', strtotime($order->created_at)) }}</td>
                                             <td>
-                                                <a href="{{ route('admin.expense.edit', $expense->id) }}" class="btn
-													btn-info">
-                                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                                                </a>
-                                                <button class="btn btn-danger" type="button" onclick="deleteItem({{ $expense->id }})">
+                                                <button class="btn btn-danger" type="button" onclick="deleteItem({{ $order->id }})">
                                                     <i class="fa fa-trash" aria-hidden="true"></i>
                                                 </button>
-                                                <form id="delete-form-{{ $expense->id }}" action="{{ route('admin.expense.destroy', $expense->id) }}" method="post"
+                                                <form id="delete-form-{{ $order->id }}" action="{{ route('admin.expense.destroy', $order->id) }}" method="post"
                                                       style="display:none;">
                                                     @csrf
                                                     @method('DELETE')
