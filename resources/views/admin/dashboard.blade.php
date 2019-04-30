@@ -66,17 +66,17 @@
 		function drawChart() {
 			var data = google.visualization.arrayToDataTable([
 				['Months', '2019 Sales', '2018 Sales'],
-				['Jan', 1000, 400],
-				['Feb', 1170, 460],
+				['Jan', 1000, 900],
+				['Feb', 1170, 1060],
 				['March', 660, 1120],
 				['May', 1030, 540],
-				['June', 1030, 540],
-				['July', 1030, 540],
-				['August', 1030, 540],
-				['Sept', 1030, 540],
-				['Oct', 1030, 540],
-				['Nov', 1030, 540],
-				['Dec', 1030, 540],
+				['June', 1000, 610],
+				['July', 840, 780],
+				['August', 1210, 1445],
+				['Sept', 1070, 1150],
+				['Oct', 962, 782],
+				['Nov', 750, 440],
+				['Dec', 1358, 1720],
 			]);
 
 			var options = {
