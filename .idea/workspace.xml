@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41f185f3-e1d6-4ef4-ad2d-c7de32da7114" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" afterDir="false" />
     </list>
@@ -20,8 +19,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/admin/dashboard.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="446" column="37" selection-start-line="446" selection-start-column="37" selection-end-line="446" selection-end-column="37" />
+            <state relative-caret-position="564">
+              <caret line="464" column="40" selection-start-line="464" selection-start-column="40" selection-end-line="464" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -29,8 +28,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DashboardController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="98">
-              <caret line="42" column="22" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="22" />
+            <state relative-caret-position="774">
+              <caret line="55" column="300" selection-start-line="55" selection-start-column="300" selection-end-line="55" selection-end-column="300" />
               <folding>
                 <element signature="e#40#56#0#PHP" expanded="true" />
               </folding>
@@ -355,7 +354,7 @@
       <workItem from="1556639768845" duration="15991000" />
       <workItem from="1556696156230" duration="10377000" />
       <workItem from="1556723971290" duration="748000" />
-      <workItem from="1556725732108" duration="12963000" />
+      <workItem from="1556725732108" duration="14219000" />
     </task>
     <task id="LOCAL-00001" summary="Update">
       <created>1555865101416</created>
@@ -368,7 +367,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="196607000" />
+    <option name="totallyTimeSpent" value="197863000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="21" width="1938" height="1068" extended-state="0" />
@@ -746,8 +745,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DashboardController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="42" column="22" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="22" />
+        <state relative-caret-position="774">
+          <caret line="55" column="300" selection-start-line="55" selection-start-column="300" selection-end-line="55" selection-end-column="300" />
           <folding>
             <element signature="e#40#56#0#PHP" expanded="true" />
           </folding>
@@ -756,8 +755,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/dashboard.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="446" column="37" selection-start-line="446" selection-start-column="37" selection-end-line="446" selection-end-column="37" />
+        <state relative-caret-position="564">
+          <caret line="464" column="40" selection-start-line="464" selection-start-column="40" selection-end-line="464" selection-end-column="40" />
         </state>
       </provider>
     </entry>

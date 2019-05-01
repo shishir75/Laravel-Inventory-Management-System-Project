@@ -44,8 +44,15 @@ class DashboardController extends Controller
             ->whereYear('created_at',  date('Y'))
             ->groupBy('months')->get();
 
+        $current_expenses = Expense::select(
+            DB::raw('sum(amount) as sums'),
+            DB::raw("DATE_FORMAT(created_at,'%m') as months"),
+            DB::raw("DATE_FORMAT(created_at,'%Y') as year"))
+            ->whereYear('created_at',  date('Y'))
+            ->groupBy('months')->get();
 
 
-        return view('admin.dashboard', compact('today','yesterday' ,'month','previous_month', 'year', 'previous_year', 'sales', 'today_expenses', 'yesterday_expenses', 'month_expenses', 'previous_month_expenses', 'year_expenses', 'previous_year_expenses', 'expenses', 'current_sales'));
+
+        return view('admin.dashboard', compact('today','yesterday' ,'month','previous_month', 'year', 'previous_year', 'sales', 'today_expenses', 'yesterday_expenses', 'month_expenses', 'previous_month_expenses', 'year_expenses', 'previous_year_expenses', 'expenses', 'current_sales', 'current_expenses'));
     }
 }
