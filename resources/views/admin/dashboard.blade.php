@@ -34,7 +34,7 @@
                 <div class="row">
                     <div class="col-md-3 col-sm-6 col-12">
                         <div class="info-box bg-info">
-                            <span class="info-box-icon"><i class="fa fa-bookmark-o"></i></span>
+                            <span class="info-box-icon"><i class="fa fa-balance-scale"></i></span>
 
                             <div class="info-box-content">
                                 <span class="info-box-text">Today's Sale</span>
@@ -59,7 +59,7 @@
                     <!-- /.col -->
                     <div class="col-md-3 col-sm-6 col-12">
                         <div class="info-box bg-info">
-                            <span class="info-box-icon"><i class="fa fa-thumbs-o-up"></i></span>
+                            <span class="info-box-icon"><i class="fa fa-balance-scale"></i></span>
 
                             <div class="info-box-content">
                                 <span class="info-box-text">This Month's Sale</span>
@@ -82,7 +82,7 @@
                     <!-- /.col -->
                     <div class="col-md-3 col-sm-6 col-12">
                         <div class="info-box bg-info">
-                            <span class="info-box-icon"><i class="fa fa-calendar"></i></span>
+                            <span class="info-box-icon"><i class="fa fa-balance-scale"></i></span>
 
                             <div class="info-box-content">
                                 <span class="info-box-text">This Year's Sale</span>
@@ -105,18 +105,11 @@
                     <!-- /.col -->
                     <div class="col-md-3 col-sm-6 col-12">
                         <div class="info-box bg-info">
-                            <span class="info-box-icon"><i class="fa fa-comments-o"></i></span>
+                            <span class="info-box-icon"><i class="fa fa-balance-scale"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text">Total Sale</span>
-                                <span class="info-box-number">{{ $sales->sum('total') }} Taka</span>
-
-                                <div class="progress">
-                                    <div class="progress-bar" style="width: 70%"></div>
-                                </div>
-                                <span class="progress-description">
-                                  70% Increase in 30 Days
-                                </span>
+                                <span class="info-box-text mt-3 pb-1">Total Sale</span>
+                                <span class="info-box-number mb-3">{{ $sales->sum('total') }} Taka</span>
                             </div>
                             <!-- /.info-box-content -->
                         </div>
@@ -125,7 +118,7 @@
                     <!-- /.col -->
                     <div class="col-md-3 col-sm-6 col-12">
                         <div class="info-box bg-success">
-                            <span class="info-box-icon"><i class="fa fa-bookmark-o"></i></span>
+                            <span class="info-box-icon"><i class="fa fa-money"></i></span>
 
                             <div class="info-box-content">
                                 <span class="info-box-text">Today's Paid</span>
@@ -149,7 +142,7 @@
                     <!-- /.col -->
                     <div class="col-md-3 col-sm-6 col-12">
                         <div class="info-box bg-success">
-                            <span class="info-box-icon"><i class="fa fa-thumbs-o-up"></i></span>
+                            <span class="info-box-icon"><i class="fa fa-money"></i></span>
 
                             <div class="info-box-content">
                                 <span class="info-box-text">This Month's Paid</span>
@@ -173,7 +166,7 @@
                     <!-- /.col -->
                     <div class="col-md-3 col-sm-6 col-12">
                         <div class="info-box bg-success">
-                            <span class="info-box-icon"><i class="fa fa-calendar"></i></span>
+                            <span class="info-box-icon"><i class="fa fa-money"></i></span>
 
                             <div class="info-box-content">
                                 <span class="info-box-text">This Year's Paid</span>
@@ -197,18 +190,11 @@
                     <!-- /.col -->
                     <div class="col-md-3 col-sm-6 col-12">
                         <div class="info-box bg-success">
-                            <span class="info-box-icon"><i class="fa fa-comments-o"></i></span>
+                            <span class="info-box-icon"><i class="fa fa-money"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text">Total Paid</span>
-                                <span class="info-box-number">{{ $sales->sum('pay') }} Taka</span>
-
-                                <div class="progress">
-                                    <div class="progress-bar" style="width: 70%"></div>
-                                </div>
-                                <span class="progress-description">
-                                  70% Increase in 30 Days
-                                </span>
+                                <span class="info-box-text mt-3 pb-1">Total Paid</span>
+                                <span class="info-box-number mb-3">{{ $sales->sum('pay') }} Taka</span>
                             </div>
                             <!-- /.info-box-content -->
                         </div>
@@ -217,7 +203,7 @@
                     <!-- /.col -->
                     <div class="col-md-3 col-sm-6 col-12">
                         <div class="info-box bg-warning">
-                            <span class="info-box-icon"><i class="fa fa-bookmark-o"></i></span>
+                            <span class="info-box-icon"><i class="fa fa-bell-o"></i></span>
 
                             <div class="info-box-content">
                                 <span class="info-box-text">Today's Due</span>
@@ -241,7 +227,7 @@
                     <!-- /.col -->
                     <div class="col-md-3 col-sm-6 col-12">
                         <div class="info-box bg-warning">
-                            <span class="info-box-icon"><i class="fa fa-thumbs-o-up"></i></span>
+                            <span class="info-box-icon"><i class="fa fa-bell-o"></i></span>
 
                             <div class="info-box-content">
                                 <span class="info-box-text">This Month's Due</span>
@@ -265,7 +251,7 @@
                     <!-- /.col -->
                     <div class="col-md-3 col-sm-6 col-12">
                         <div class="info-box bg-warning">
-                            <span class="info-box-icon"><i class="fa fa-calendar"></i></span>
+                            <span class="info-box-icon"><i class="fa fa-bell-o"></i></span>
 
                             <div class="info-box-content">
                                 <span class="info-box-text">This Year's Due</span>
@@ -289,18 +275,11 @@
                     <!-- /.col -->
                     <div class="col-md-3 col-sm-6 col-12">
                         <div class="info-box bg-warning">
-                            <span class="info-box-icon"><i class="fa fa-comments-o"></i></span>
+                            <span class="info-box-icon"><i class="fa fa-bell-o"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text">Total Due</span>
-                                <span class="info-box-number">{{ $sales->sum('due') }} Taka</span>
-
-                                <div class="progress">
-                                    <div class="progress-bar" style="width: 70%"></div>
-                                </div>
-                                <span class="progress-description">
-                                  70% Increase in 30 Days
-                                </span>
+                                <span class="info-box-text mt-3 pb-1">Total Due</span>
+                                <span class="info-box-number mb-3">{{ $sales->sum('due') }} Taka</span>
                             </div>
                             <!-- /.info-box-content -->
                         </div>
@@ -310,7 +289,7 @@
                     <!-- /.col -->
                     <div class="col-md-3 col-sm-6 col-12">
                         <div class="info-box bg-danger">
-                            <span class="info-box-icon"><i class="fa fa-bookmark-o"></i></span>
+                            <span class="info-box-icon"><i class="fa fa-minus-square"></i></span>
 
                             <div class="info-box-content">
                                 <span class="info-box-text">Today's Expenses</span>
@@ -335,7 +314,7 @@
                     <!-- /.col -->
                     <div class="col-md-3 col-sm-6 col-12">
                         <div class="info-box bg-danger">
-                            <span class="info-box-icon"><i class="fa fa-thumbs-o-up"></i></span>
+                            <span class="info-box-icon"><i class="fa fa-minus-square"></i></span>
 
                             <div class="info-box-content">
                                 <span class="info-box-text">This Month's Expenses</span>
@@ -359,7 +338,7 @@
                     <!-- /.col -->
                     <div class="col-md-3 col-sm-6 col-12">
                         <div class="info-box bg-danger">
-                            <span class="info-box-icon"><i class="fa fa-calendar"></i></span>
+                            <span class="info-box-icon"><i class="fa fa-minus-square"></i></span>
 
                             <div class="info-box-content">
                                 <span class="info-box-text">This Year's Expenses</span>
@@ -383,18 +362,11 @@
                     <!-- /.col -->
                     <div class="col-md-3 col-sm-6 col-12">
                         <div class="info-box bg-danger">
-                            <span class="info-box-icon"><i class="fa fa-comments-o"></i></span>
+                            <span class="info-box-icon"><i class="fa fa-minus-square"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text">Total Expenses</span>
-                                <span class="info-box-number">{{ $expenses->sum('amount') }} Taka</span>
-
-                                <div class="progress">
-                                    <div class="progress-bar" style="width: 70%"></div>
-                                </div>
-                                <span class="progress-description">
-                                  70% Increase in 30 Days
-                                </span>
+                                <span class="info-box-text mt-3 pb-1">Total Expenses</span>
+                                <span class="info-box-number mb-3">{{ $expenses->sum('amount') }} Taka</span>
                             </div>
                             <!-- /.info-box-content -->
                         </div>

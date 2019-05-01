@@ -18,24 +18,21 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/admin/dashboard.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
-              <caret line="229" column="113" selection-start-line="229" selection-start-column="113" selection-end-line="229" selection-end-column="113" />
+            <state relative-caret-position="-120">
+              <caret line="364" column="84" selection-start-line="364" selection-start-column="84" selection-end-line="364" selection-end-column="84" />
               <folding>
                 <element signature="e#1327#1345#0#HTML" expanded="true" />
                 <element signature="e#2653#2671#0#HTML" expanded="true" />
                 <element signature="e#3689#3707#0#HTML" expanded="true" />
-                <element signature="e#4717#4735#0#HTML" expanded="true" />
                 <element signature="e#5746#5764#0#HTML" expanded="true" />
                 <element signature="e#6783#6801#0#HTML" expanded="true" />
                 <element signature="e#7820#7838#0#HTML" expanded="true" />
-                <element signature="e#8849#8867#0#HTML" expanded="true" />
+                <element signature="e#9877#9895#0#HTML" expanded="true" />
                 <element signature="e#10913#10931#0#HTML" expanded="true" />
                 <element signature="e#11945#11963#0#HTML" expanded="true" />
-                <element signature="e#12973#12991#0#HTML" expanded="true" />
                 <element signature="e#14052#14070#0#HTML" expanded="true" />
                 <element signature="e#15104#15122#0#HTML" expanded="true" />
                 <element signature="e#16152#16170#0#HTML" expanded="true" />
-                <element signature="e#17190#17208#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -360,7 +357,7 @@
       <workItem from="1556555265222" duration="249000" />
       <workItem from="1556555562156" duration="13822000" />
       <workItem from="1556639768845" duration="15991000" />
-      <workItem from="1556696156230" duration="9054000" />
+      <workItem from="1556696156230" duration="10275000" />
     </task>
     <task id="LOCAL-00001" summary="Update">
       <created>1555865101416</created>
@@ -373,7 +370,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="181573000" />
+    <option name="totallyTimeSpent" value="182794000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="21" width="1938" height="1068" extended-state="0" />
@@ -761,24 +758,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/dashboard.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="229" column="113" selection-start-line="229" selection-start-column="113" selection-end-line="229" selection-end-column="113" />
+        <state relative-caret-position="-120">
+          <caret line="364" column="84" selection-start-line="364" selection-start-column="84" selection-end-line="364" selection-end-column="84" />
           <folding>
             <element signature="e#1327#1345#0#HTML" expanded="true" />
             <element signature="e#2653#2671#0#HTML" expanded="true" />
             <element signature="e#3689#3707#0#HTML" expanded="true" />
-            <element signature="e#4717#4735#0#HTML" expanded="true" />
             <element signature="e#5746#5764#0#HTML" expanded="true" />
             <element signature="e#6783#6801#0#HTML" expanded="true" />
             <element signature="e#7820#7838#0#HTML" expanded="true" />
-            <element signature="e#8849#8867#0#HTML" expanded="true" />
+            <element signature="e#9877#9895#0#HTML" expanded="true" />
             <element signature="e#10913#10931#0#HTML" expanded="true" />
             <element signature="e#11945#11963#0#HTML" expanded="true" />
-            <element signature="e#12973#12991#0#HTML" expanded="true" />
             <element signature="e#14052#14070#0#HTML" expanded="true" />
             <element signature="e#15104#15122#0#HTML" expanded="true" />
             <element signature="e#16152#16170#0#HTML" expanded="true" />
-            <element signature="e#17190#17208#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
