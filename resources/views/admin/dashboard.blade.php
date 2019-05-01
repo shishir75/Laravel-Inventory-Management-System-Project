@@ -43,8 +43,11 @@
                                 <div class="progress">
                                     <div class="progress-bar" style="width: 70%"></div>
                                 </div>
-                                <span class="progress-description">
-                                  70% Increase in Yesterday
+                                @php
+                                    $percentage = (($today->sum('total') - $yesterday->sum('total'))/ $yesterday->sum('total'))*100;
+                                @endphp
+                                <span class="progress-description {{ $percentage < 0 ? 'text-warning' : '' }}">
+                                  {{ number_format(abs($percentage), 2) }} % {{ $percentage > 0 ? 'Increase' : 'Decrease' }} From Yesterday
                                 </span>
                             </div>
                             <!-- /.info-box-content -->
@@ -53,7 +56,7 @@
                     </div>
                     <!-- /.col -->
                     <div class="col-md-3 col-sm-6 col-12">
-                        <div class="info-box bg-success">
+                        <div class="info-box bg-info">
                             <span class="info-box-icon"><i class="fa fa-thumbs-o-up"></i></span>
 
                             <div class="info-box-content">
@@ -63,8 +66,11 @@
                                 <div class="progress">
                                     <div class="progress-bar" style="width: 70%"></div>
                                 </div>
-                                <span class="progress-description">
-                                  70% Increase in Previous Month
+                                @php
+                                    $percentage = (($month->sum('total') - $previous_month->sum('total'))/ $previous_month->sum('total'))*100;
+                                @endphp
+                                <span class="progress-description {{ $percentage < 0 ? 'text-warning' : '' }}">
+                                  {{ number_format(abs($percentage), 2) }} % {{ $percentage > 0 ? 'Increase' : 'Decrease' }} From Previous Month
                                 </span>
                             </div>
                             <!-- /.info-box-content -->
@@ -73,7 +79,7 @@
                     </div>
                     <!-- /.col -->
                     <div class="col-md-3 col-sm-6 col-12">
-                        <div class="info-box bg-warning">
+                        <div class="info-box bg-info">
                             <span class="info-box-icon"><i class="fa fa-calendar"></i></span>
 
                             <div class="info-box-content">
@@ -83,8 +89,11 @@
                                 <div class="progress">
                                     <div class="progress-bar" style="width: 70%"></div>
                                 </div>
-                                <span class="progress-description">
-                                  70% Increase in Last Year
+                                @php
+                                    $percentage = (($year->sum('total') - $previous_year->sum('total'))/ $previous_year->sum('total'))*100;
+                                @endphp
+                                <span class="progress-description {{ $percentage < 0 ? 'text-warning' : '' }}">
+                                  {{ number_format(abs($percentage), 2) }} % {{ $percentage > 0 ? 'Increase' : 'Decrease' }} From Previous Year
                                 </span>
                             </div>
                             <!-- /.info-box-content -->
@@ -93,7 +102,7 @@
                     </div>
                     <!-- /.col -->
                     <div class="col-md-3 col-sm-6 col-12">
-                        <div class="info-box bg-danger">
+                        <div class="info-box bg-info">
                             <span class="info-box-icon"><i class="fa fa-comments-o"></i></span>
 
                             <div class="info-box-content">
@@ -113,7 +122,7 @@
                     </div>
                     <!-- /.col -->
                     <div class="col-md-3 col-sm-6 col-12">
-                        <div class="info-box bg-info">
+                        <div class="info-box bg-success">
                             <span class="info-box-icon"><i class="fa fa-bookmark-o"></i></span>
 
                             <div class="info-box-content">
@@ -123,8 +132,11 @@
                                 <div class="progress">
                                     <div class="progress-bar" style="width: 70%"></div>
                                 </div>
-                                <span class="progress-description">
-                                  70% Increase in Yesterday
+                                @php
+                                    $percentage = (($today->sum('pay') - $yesterday->sum('pay'))/ $yesterday->sum('pay'))*100;
+                                @endphp
+                                <span class="progress-description {{ $percentage < 0 ? 'text-warning' : '' }}">
+                                  {{ number_format(abs($percentage), 2) }} % {{ $percentage > 0 ? 'Increase' : 'Decrease' }} From Yesterday
                                 </span>
                             </div>
                             <!-- /.info-box-content -->
@@ -143,8 +155,11 @@
                                 <div class="progress">
                                     <div class="progress-bar" style="width: 70%"></div>
                                 </div>
-                                <span class="progress-description">
-                                  70% Increase in Previous Month
+                                @php
+                                    $percentage = (($month->sum('pay') - $previous_month->sum('pay'))/ $previous_month->sum('pay'))*100;
+                                @endphp
+                                <span class="progress-description {{ $percentage < 0 ? 'text-warning' : '' }}">
+                                  {{ number_format(abs($percentage), 2) }} % {{ $percentage > 0 ? 'Increase' : 'Decrease' }} From Previous Month
                                 </span>
                             </div>
                             <!-- /.info-box-content -->
@@ -153,7 +168,7 @@
                     </div>
                     <!-- /.col -->
                     <div class="col-md-3 col-sm-6 col-12">
-                        <div class="info-box bg-warning">
+                        <div class="info-box bg-success">
                             <span class="info-box-icon"><i class="fa fa-calendar"></i></span>
 
                             <div class="info-box-content">
@@ -163,8 +178,11 @@
                                 <div class="progress">
                                     <div class="progress-bar" style="width: 70%"></div>
                                 </div>
-                                <span class="progress-description">
-                                  70% Increase in Last Year
+                                @php
+                                    $percentage = (($year->sum('pay') - $previous_year->sum('pay'))/ $previous_year->sum('pay'))*100;
+                                @endphp
+                                <span class="progress-description {{ $percentage < 0 ? 'text-warning' : '' }}">
+                                  {{ number_format(abs($percentage), 2) }} % {{ $percentage > 0 ? 'Increase' : 'Decrease' }} From Previous Year
                                 </span>
                             </div>
                             <!-- /.info-box-content -->
@@ -173,7 +191,7 @@
                     </div>
                     <!-- /.col -->
                     <div class="col-md-3 col-sm-6 col-12">
-                        <div class="info-box bg-danger">
+                        <div class="info-box bg-success">
                             <span class="info-box-icon"><i class="fa fa-comments-o"></i></span>
 
                             <div class="info-box-content">
@@ -193,7 +211,7 @@
                     </div>
                     <!-- /.col -->
                     <div class="col-md-3 col-sm-6 col-12">
-                        <div class="info-box bg-info">
+                        <div class="info-box bg-warning">
                             <span class="info-box-icon"><i class="fa fa-bookmark-o"></i></span>
 
                             <div class="info-box-content">
@@ -203,8 +221,11 @@
                                 <div class="progress">
                                     <div class="progress-bar" style="width: 70%"></div>
                                 </div>
-                                <span class="progress-description">
-                                  70% Increase in Yesterday
+                                @php
+                                    $percentage = (($today->sum('due') - $yesterday->sum('due'))/ $yesterday->sum('due'))*100;
+                                @endphp
+                                <span class="progress-description {{ $percentage < 0 ? 'text-success' : '' }}">
+                                  {{ number_format(abs($percentage), 2) }} % {{ $percentage > 0 ? 'Increase' : 'Decrease' }} From Yesterday
                                 </span>
                             </div>
                             <!-- /.info-box-content -->
@@ -213,7 +234,7 @@
                     </div>
                     <!-- /.col -->
                     <div class="col-md-3 col-sm-6 col-12">
-                        <div class="info-box bg-success">
+                        <div class="info-box bg-warning">
                             <span class="info-box-icon"><i class="fa fa-thumbs-o-up"></i></span>
 
                             <div class="info-box-content">
@@ -223,8 +244,11 @@
                                 <div class="progress">
                                     <div class="progress-bar" style="width: 70%"></div>
                                 </div>
-                                <span class="progress-description">
-                                  70% Increase in Last Month
+                                @php
+                                    $percentage = (($month->sum('due') - $previous_month->sum('due'))/ $previous_month->sum('due'))*100;
+                                @endphp
+                                <span class="progress-description {{ $percentage < 0 ? 'text-success' : '' }}">
+                                  {{ number_format(abs($percentage), 2) }} % {{ $percentage > 0 ? 'Increase' : 'Decrease' }} From Previous Month
                                 </span>
                             </div>
                             <!-- /.info-box-content -->
@@ -243,8 +267,103 @@
                                 <div class="progress">
                                     <div class="progress-bar" style="width: 70%"></div>
                                 </div>
+                                @php
+                                    $percentage = (($year->sum('due') - $previous_year->sum('due'))/ $previous_year->sum('due'))*100;
+                                @endphp
+                                <span class="progress-description {{ $percentage < 0 ? 'text-success' : '' }}">
+                                  {{ number_format(abs($percentage), 2) }} % {{ $percentage > 0 ? 'Increase' : 'Decrease' }} From Previous Year
+                                </span>
+                            </div>
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-md-3 col-sm-6 col-12">
+                        <div class="info-box bg-warning">
+                            <span class="info-box-icon"><i class="fa fa-comments-o"></i></span>
+
+                            <div class="info-box-content">
+                                <span class="info-box-text">Total Due</span>
+                                <span class="info-box-number">{{ $sales->sum('due') }} Taka</span>
+
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 70%"></div>
+                                </div>
                                 <span class="progress-description">
-                                  70% Increase in Last Year
+                                  70% Increase in 30 Days
+                                </span>
+                            </div>
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+                    </div>
+                    <!-- /.col -->
+                    <!-- /.col -->
+                    <div class="col-md-3 col-sm-6 col-12">
+                        <div class="info-box bg-danger">
+                            <span class="info-box-icon"><i class="fa fa-bookmark-o"></i></span>
+
+                            <div class="info-box-content">
+                                <span class="info-box-text">Today's Expenses</span>
+                                <span class="info-box-number">{{ $today_expenses->sum('amount') }} Taka</span>
+
+                                @php
+                                    $percentage = (($today_expenses->sum('amount') - $yesterday_expenses->sum('amount'))/ $yesterday_expenses->sum('amount'))*100;
+                                @endphp
+
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: {{  number_format(abs($percentage), 2) }}%"></div>
+                                </div>
+
+                                <span class="progress-description {{ $percentage < 0 ? 'text-success' : '' }}">
+                                  {{ number_format(abs($percentage), 2) }} % {{ $percentage > 0 ? 'Increase' : 'Decrease' }} From Yesterday
+                                </span>
+                            </div>
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-md-3 col-sm-6 col-12">
+                        <div class="info-box bg-danger">
+                            <span class="info-box-icon"><i class="fa fa-thumbs-o-up"></i></span>
+
+                            <div class="info-box-content">
+                                <span class="info-box-text">This Month's Expenses</span>
+                                <span class="info-box-number">{{ $month_expenses->sum('amount') }} Taka</span>
+
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 70%"></div>
+                                </div>
+                                @php
+                                    $percentage = (($today_expenses->sum('amount') - $yesterday_expenses->sum('amount'))/ $yesterday_expenses->sum('amount'))*100;
+                                @endphp
+                                <span class="progress-description {{ $percentage < 0 ? 'text-success' : '' }}">
+                                  {{ number_format(abs($percentage), 2) }} % {{ $percentage > 0 ? 'Increase' : 'Decrease' }} From Previous Month
+                                </span>
+                            </div>
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-md-3 col-sm-6 col-12">
+                        <div class="info-box bg-danger">
+                            <span class="info-box-icon"><i class="fa fa-calendar"></i></span>
+
+                            <div class="info-box-content">
+                                <span class="info-box-text">This Year's Expenses</span>
+                                <span class="info-box-number">{{ $year_expenses->sum('amount') }} Taka</span>
+
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 70%"></div>
+                                </div>
+                                @php
+                                    $percentage = (($year_expenses->sum('amount') - $previous_year_expenses->sum('amount'))/ $previous_year_expenses->sum('amount'))*100;
+                                @endphp
+                                <span class="progress-description {{ $percentage > 0 ? 'text-warning' : '' }}">
+                                  {{ number_format(abs($percentage), 2) }} % {{ $percentage > 0 ? 'Increase' : 'Decrease' }} From Previous Year
                                 </span>
                             </div>
                             <!-- /.info-box-content -->
@@ -257,8 +376,8 @@
                             <span class="info-box-icon"><i class="fa fa-comments-o"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text">Total Due</span>
-                                <span class="info-box-number">{{ $sales->sum('due') }} Taka</span>
+                                <span class="info-box-text">Total Expenses</span>
+                                <span class="info-box-number">{{ $expenses->sum('amount') }} Taka</span>
 
                                 <div class="progress">
                                     <div class="progress-bar" style="width: 70%"></div>
@@ -293,7 +412,7 @@
 						<!-- AREA CHART -->
 						<div class="card card-primary">
 							<div class="card-header">
-								<h3 class="card-title">Sales Report</h3>
+								<h3 class="card-title">Expenses Report</h3>
 							</div>
 							<div class="card-body">
 								<div class="chart">
@@ -362,7 +481,7 @@
 
 		function drawChart() {
 			var data = google.visualization.arrayToDataTable([
-				['Months', '2019 Sales', '2018 Sales'],
+				['Months', '2019 Expenses', '2018 Expenses'],
 				['Jan', 1000, 900],
 				['Feb', 1170, 1060],
 				['March', 660, 1120],
@@ -378,8 +497,8 @@
 
 			var options = {
 				chart: {
-					title: 'Company Sales Report',
-					subtitle: 'Sales report by months in last two years',
+					title: 'Company Expenses Report',
+					subtitle: 'Expenses report by months in last two years',
 				},
 				width: 750,
 				bars: 'vertical', // Required for Material Bar Charts.

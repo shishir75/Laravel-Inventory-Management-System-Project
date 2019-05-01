@@ -19,21 +19,25 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/admin/dashboard.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="398">
-              <caret line="102" column="32" selection-start-line="102" selection-start-column="32" selection-end-line="102" selection-end-column="32" />
+            <state relative-caret-position="485">
+              <caret line="95" column="143" selection-start-line="95" selection-start-column="143" selection-end-line="95" selection-end-column="143" />
               <folding>
                 <element signature="e#1327#1345#0#HTML" expanded="true" />
-                <element signature="e#2295#2313#0#HTML" expanded="true" />
-                <element signature="e#3261#3279#0#HTML" expanded="true" />
-                <element signature="e#5407#5425#0#HTML" expanded="true" />
-                <element signature="e#6421#6439#0#HTML" expanded="true" />
-                <element signature="e#7436#7454#0#HTML" expanded="true" />
-                <element signature="e#8441#8459#0#HTML" expanded="true" />
-                <element signature="e#5326#5344#0#HTML" expanded="true" />
-                <element signature="e#6326#6344#0#HTML" expanded="true" />
-                <element signature="e#7324#7342#0#HTML" expanded="true" />
-                <element signature="e#8325#8343#0#HTML" expanded="true" />
-                <element signature="e#756#1649#0#HTML" />
+                <element signature="e#2653#2671#0#HTML" expanded="true" />
+                <element signature="e#3689#3707#0#HTML" expanded="true" />
+                <element signature="e#4717#4735#0#HTML" expanded="true" />
+                <element signature="e#5746#5764#0#HTML" expanded="true" />
+                <element signature="e#6783#6801#0#HTML" expanded="true" />
+                <element signature="e#7820#7838#0#HTML" expanded="true" />
+                <element signature="e#8849#8867#0#HTML" expanded="true" />
+                <element signature="e#9877#9895#0#HTML" expanded="true" />
+                <element signature="e#10913#10931#0#HTML" expanded="true" />
+                <element signature="e#11945#11963#0#HTML" expanded="true" />
+                <element signature="e#12973#12991#0#HTML" expanded="true" />
+                <element signature="e#14052#14070#0#HTML" expanded="true" />
+                <element signature="e#15104#15122#0#HTML" expanded="true" />
+                <element signature="e#16152#16170#0#HTML" expanded="true" />
+                <element signature="e#17190#17208#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -42,10 +46,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DashboardController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="638">
-              <caret line="22" column="79" selection-start-line="22" selection-start-column="79" selection-end-line="22" selection-end-column="79" />
+            <state relative-caret-position="324">
+              <caret line="22" column="22" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="22" />
               <folding>
-                <element signature="e#40#54#0#PHP" expanded="true" />
+                <element signature="e#40#56#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -358,7 +362,7 @@
       <workItem from="1556555265222" duration="249000" />
       <workItem from="1556555562156" duration="13822000" />
       <workItem from="1556639768845" duration="15991000" />
-      <workItem from="1556696156230" duration="3189000" />
+      <workItem from="1556696156230" duration="8465000" />
     </task>
     <task id="LOCAL-00001" summary="Update">
       <created>1555865101416</created>
@@ -371,13 +375,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="175708000" />
+    <option name="totallyTimeSpent" value="180984000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="21" width="1938" height="1068" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49836066" visible="true" weight="0.14962727" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49836066" weight="0.14962727" />
       <window_info id="Structure" order="1" sideWeight="0.50163937" side_tool="true" weight="0.17944622" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -749,31 +753,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DashboardController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="638">
-          <caret line="22" column="79" selection-start-line="22" selection-start-column="79" selection-end-line="22" selection-end-column="79" />
+        <state relative-caret-position="324">
+          <caret line="22" column="22" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="22" />
           <folding>
-            <element signature="e#40#54#0#PHP" expanded="true" />
+            <element signature="e#40#56#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/dashboard.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="102" column="32" selection-start-line="102" selection-start-column="32" selection-end-line="102" selection-end-column="32" />
+        <state relative-caret-position="485">
+          <caret line="95" column="143" selection-start-line="95" selection-start-column="143" selection-end-line="95" selection-end-column="143" />
           <folding>
             <element signature="e#1327#1345#0#HTML" expanded="true" />
-            <element signature="e#2295#2313#0#HTML" expanded="true" />
-            <element signature="e#3261#3279#0#HTML" expanded="true" />
-            <element signature="e#5407#5425#0#HTML" expanded="true" />
-            <element signature="e#6421#6439#0#HTML" expanded="true" />
-            <element signature="e#7436#7454#0#HTML" expanded="true" />
-            <element signature="e#8441#8459#0#HTML" expanded="true" />
-            <element signature="e#5326#5344#0#HTML" expanded="true" />
-            <element signature="e#6326#6344#0#HTML" expanded="true" />
-            <element signature="e#7324#7342#0#HTML" expanded="true" />
-            <element signature="e#8325#8343#0#HTML" expanded="true" />
-            <element signature="e#756#1649#0#HTML" />
+            <element signature="e#2653#2671#0#HTML" expanded="true" />
+            <element signature="e#3689#3707#0#HTML" expanded="true" />
+            <element signature="e#4717#4735#0#HTML" expanded="true" />
+            <element signature="e#5746#5764#0#HTML" expanded="true" />
+            <element signature="e#6783#6801#0#HTML" expanded="true" />
+            <element signature="e#7820#7838#0#HTML" expanded="true" />
+            <element signature="e#8849#8867#0#HTML" expanded="true" />
+            <element signature="e#9877#9895#0#HTML" expanded="true" />
+            <element signature="e#10913#10931#0#HTML" expanded="true" />
+            <element signature="e#11945#11963#0#HTML" expanded="true" />
+            <element signature="e#12973#12991#0#HTML" expanded="true" />
+            <element signature="e#14052#14070#0#HTML" expanded="true" />
+            <element signature="e#15104#15122#0#HTML" expanded="true" />
+            <element signature="e#16152#16170#0#HTML" expanded="true" />
+            <element signature="e#17190#17208#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
