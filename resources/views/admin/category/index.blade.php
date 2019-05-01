@@ -60,7 +60,7 @@
                                         <tr>
                                             <td>{{ $key + 1 }}</td>
                                             <td>{{ $category->name }}</td>
-                                            <td></td>
+                                            <td>{{ $category->products->count() }}</td>
                                             <td>
                                                 <a href="{{ route('admin.category.edit', $category->id) }}" class="btn
 													btn-info">
