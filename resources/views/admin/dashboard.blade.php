@@ -37,14 +37,14 @@
                             <span class="info-box-icon"><i class="fa fa-bookmark-o"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text">Bookmarks</span>
+                                <span class="info-box-text">Today's Sale</span>
                                 <span class="info-box-number">41,410</span>
 
                                 <div class="progress">
                                     <div class="progress-bar" style="width: 70%"></div>
                                 </div>
                                 <span class="progress-description">
-                                  70% Increase in 30 Days
+                                  70% Increase in Yesterday
                                 </span>
                             </div>
                             <!-- /.info-box-content -->
@@ -57,14 +57,14 @@
                             <span class="info-box-icon"><i class="fa fa-thumbs-o-up"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text">Likes</span>
+                                <span class="info-box-text">This Month's Sale</span>
                                 <span class="info-box-number">41,410</span>
 
                                 <div class="progress">
                                     <div class="progress-bar" style="width: 70%"></div>
                                 </div>
                                 <span class="progress-description">
-                                  70% Increase in 30 Days
+                                  70% Increase in Previous Month
                                 </span>
                             </div>
                             <!-- /.info-box-content -->
@@ -77,14 +77,14 @@
                             <span class="info-box-icon"><i class="fa fa-calendar"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text">Events</span>
+                                <span class="info-box-text">This Year's Sale</span>
                                 <span class="info-box-number">41,410</span>
 
                                 <div class="progress">
                                     <div class="progress-bar" style="width: 70%"></div>
                                 </div>
                                 <span class="progress-description">
-                                  70% Increase in 30 Days
+                                  70% Increase in Last Year
                                 </span>
                             </div>
                             <!-- /.info-box-content -->
@@ -97,7 +97,7 @@
                             <span class="info-box-icon"><i class="fa fa-comments-o"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text">Comments</span>
+                                <span class="info-box-text">Total Sale</span>
                                 <span class="info-box-number">41,410</span>
 
                                 <div class="progress">
@@ -117,14 +117,14 @@
                             <span class="info-box-icon"><i class="fa fa-bookmark-o"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text">Bookmarks</span>
+                                <span class="info-box-text">Today's Due</span>
                                 <span class="info-box-number">41,410</span>
 
                                 <div class="progress">
                                     <div class="progress-bar" style="width: 70%"></div>
                                 </div>
                                 <span class="progress-description">
-                                  70% Increase in 30 Days
+                                  70% Increase in Yesterday
                                 </span>
                             </div>
                             <!-- /.info-box-content -->
@@ -137,14 +137,14 @@
                             <span class="info-box-icon"><i class="fa fa-thumbs-o-up"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text">Likes</span>
+                                <span class="info-box-text">This Month's Due</span>
                                 <span class="info-box-number">41,410</span>
 
                                 <div class="progress">
                                     <div class="progress-bar" style="width: 70%"></div>
                                 </div>
                                 <span class="progress-description">
-                                  70% Increase in 30 Days
+                                  70% Increase in Last Month
                                 </span>
                             </div>
                             <!-- /.info-box-content -->
@@ -157,14 +157,14 @@
                             <span class="info-box-icon"><i class="fa fa-calendar"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text">Events</span>
+                                <span class="info-box-text">This Year's Due</span>
                                 <span class="info-box-number">41,410</span>
 
                                 <div class="progress">
                                     <div class="progress-bar" style="width: 70%"></div>
                                 </div>
                                 <span class="progress-description">
-                                  70% Increase in 30 Days
+                                  70% Increase in Last Year
                                 </span>
                             </div>
                             <!-- /.info-box-content -->
@@ -177,7 +177,7 @@
                             <span class="info-box-icon"><i class="fa fa-comments-o"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text">Comments</span>
+                                <span class="info-box-text">Total Due</span>
                                 <span class="info-box-number">41,410</span>
 
                                 <div class="progress">

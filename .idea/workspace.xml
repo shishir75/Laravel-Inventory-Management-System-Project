@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41f185f3-e1d6-4ef4-ad2d-c7de32da7114" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,13 +18,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/admin/dashboard.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="788">
-              <caret line="114" column="22" selection-start-line="114" selection-start-column="22" selection-end-line="114" selection-end-column="22" />
+            <state relative-caret-position="317">
+              <caret line="99" column="70" selection-start-line="99" selection-start-column="70" selection-end-line="99" selection-end-column="70" />
               <folding>
                 <element signature="e#1327#1345#0#HTML" expanded="true" />
                 <element signature="e#2295#2313#0#HTML" expanded="true" />
                 <element signature="e#3261#3279#0#HTML" expanded="true" />
                 <element signature="e#4230#4248#0#HTML" expanded="true" />
+                <element signature="e#5326#5344#0#HTML" expanded="true" />
+                <element signature="e#6326#6344#0#HTML" expanded="true" />
+                <element signature="e#7324#7342#0#HTML" expanded="true" />
+                <element signature="e#8325#8343#0#HTML" expanded="true" />
                 <element signature="e#756#1649#0#HTML" />
               </folding>
             </state>
@@ -197,7 +200,7 @@
       <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-dompdf" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="-9" />
     <option name="y" value="21" />
     <option name="width" value="1938" />
@@ -336,7 +339,7 @@
       <workItem from="1556555265222" duration="249000" />
       <workItem from="1556555562156" duration="13822000" />
       <workItem from="1556639768845" duration="15991000" />
-      <workItem from="1556696156230" duration="637000" />
+      <workItem from="1556696156230" duration="1201000" />
     </task>
     <task id="LOCAL-00001" summary="Update">
       <created>1555865101416</created>
@@ -349,7 +352,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="173156000" />
+    <option name="totallyTimeSpent" value="173720000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="21" width="1938" height="1068" extended-state="0" />
@@ -737,13 +740,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/dashboard.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="788">
-          <caret line="114" column="22" selection-start-line="114" selection-start-column="22" selection-end-line="114" selection-end-column="22" />
+        <state relative-caret-position="317">
+          <caret line="99" column="70" selection-start-line="99" selection-start-column="70" selection-end-line="99" selection-end-column="70" />
           <folding>
             <element signature="e#1327#1345#0#HTML" expanded="true" />
             <element signature="e#2295#2313#0#HTML" expanded="true" />
             <element signature="e#3261#3279#0#HTML" expanded="true" />
             <element signature="e#4230#4248#0#HTML" expanded="true" />
+            <element signature="e#5326#5344#0#HTML" expanded="true" />
+            <element signature="e#6326#6344#0#HTML" expanded="true" />
+            <element signature="e#7324#7342#0#HTML" expanded="true" />
+            <element signature="e#8325#8343#0#HTML" expanded="true" />
             <element signature="e#756#1649#0#HTML" />
           </folding>
         </state>
