@@ -416,44 +416,36 @@
 @endsection
 
 @push('js')
-	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 	<script type="text/javascript">
-		google.charts.load('current', {'packages':['bar']});
-		google.charts.setOnLoadCallback(drawChart);
+        google.charts.load('current', {'packages':['bar']});
+        google.charts.setOnLoadCallback(drawStuff);
 
-		function drawChart() {
-			var data = google.visualization.arrayToDataTable([
-				['Months', '2019 Sales', '2018 Sales'],
-				['Jan', 1000, 900],
-				['Feb', 1170, 1060],
-				['March', 660, 1120],
-				['May', 1030, 540],
-				['June', 1000, 610],
-				['July', 840, 780],
-				['August', 1210, 1445],
-				['Sept', 1070, 1150],
-				['Oct', 962, 782],
-				['Nov', 750, 440],
-				['Dec', 1358, 1720],
+        function drawStuff() {
+            var data = new google.visualization.arrayToDataTable([
+                ['Month', 'Sales {{ date('Y') }}'],
+                @foreach($current_sales as $sale)
+                    ["{{ date('M', mktime('0', 0, 0, $sale['months'], 10)) }}", {{ $sale['sums'] }}],
+                @endforeach
 			]);
 
-			var options = {
-				chart: {
-					title: 'Company Sales Report',
-					subtitle: 'Sales report by months in last two years',
-				},
-				width: 750,
-				bars: 'vertical', // Required for Material Bar Charts.
-				series: {
-					0: { axis: 'distance' }, // Bind series 0 to an axis named 'distance'.
-					1: { axis: 'brightness' } // Bind series 1 to an axis named 'brightness'.
-				},
-				legend: { position: 'in'},
-			};
+            var options = {
+                title: 'Monthly Sales Report',
+                width: 700,
+                legend: { position: 'none' },
+                chart: { title: 'Monthly Sales Report {{ date('Y') }}',
+                    subtitle: 'Monthly Sales Report' },
+                bars: 'vertical', // Required for Material Bar Charts.
+                axes: {
+                    x: {
+                        0: { side: 'bottom', label: 'Month'} // Top x-axis.
+                    }
+                },
+                bar: { groupWidth: "90%" }
+            };
 
-			var chart = new google.charts.Bar(document.getElementById('barchart_material'));
-
-			chart.draw(data, google.charts.Bar.convertOptions(options));
+            var chart = new google.charts.Bar(document.getElementById('barchart_material'));
+            chart.draw(data, options);
 		}
 	</script>
 

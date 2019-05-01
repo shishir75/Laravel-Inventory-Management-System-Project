@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Expense;
 use App\Order;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
 {
@@ -35,6 +36,16 @@ class DashboardController extends Controller
 
         $expenses = Expense::all();
 
-        return view('admin.dashboard', compact('today','yesterday' ,'month','previous_month', 'year', 'previous_year', 'sales', 'today_expenses', 'yesterday_expenses', 'month_expenses', 'previous_month_expenses', 'year_expenses', 'previous_year_expenses', 'expenses'));
+        // for charts
+        $current_sales = Order::select(
+            DB::raw('sum(total) as sums'),
+            DB::raw("DATE_FORMAT(created_at,'%m') as months"),
+            DB::raw("DATE_FORMAT(created_at,'%Y') as year"))
+            ->whereYear('created_at',  date('Y'))
+            ->groupBy('months')->get();
+
+
+
+        return view('admin.dashboard', compact('today','yesterday' ,'month','previous_month', 'year', 'previous_year', 'sales', 'today_expenses', 'yesterday_expenses', 'month_expenses', 'previous_month_expenses', 'year_expenses', 'previous_year_expenses', 'expenses', 'current_sales'));
     }
 }
