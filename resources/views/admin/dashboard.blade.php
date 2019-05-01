@@ -49,7 +49,7 @@
                                 </div>
 
                                 <span class="progress-description {{ $percentage < 0 ? 'text-warning' : '' }}">
-                                  {{ number_format(abs($percentage), 2) }} % {{ $percentage > 0 ? 'Increase' : 'Decrease' }} From Yesterday
+                                  {{ number_format(abs($percentage), 2) }} % {{ $percentage > 0 ? 'Increase' : 'Decrease' }} From {{ date('l', strtotime('-1 day')) }}
                                 </span>
                             </div>
                             <!-- /.info-box-content -->
@@ -72,7 +72,7 @@
                                     <div class="progress-bar" style="width: {{ number_format(abs($percentage), 2) }}%"></div>
                                 </div>
                                 <span class="progress-description {{ $percentage < 0 ? 'text-warning' : '' }}">
-                                  {{ number_format(abs($percentage), 2) }} % {{ $percentage > 0 ? 'Increase' : 'Decrease' }} From Previous Month
+                                  {{ number_format(abs($percentage), 2) }} % {{ $percentage > 0 ? 'Increase' : 'Decrease' }} From {{ date('F', strtotime('-1 month')) }}
                                 </span>
                             </div>
                             <!-- /.info-box-content -->
@@ -95,7 +95,7 @@
                                     <div class="progress-bar" style="width: {{ number_format(abs($percentage), 2) }}%"></div>
                                 </div>
                                 <span class="progress-description {{ $percentage < 0 ? 'text-warning' : '' }}">
-                                  {{ number_format(abs($percentage), 2) }} % {{ $percentage > 0 ? 'Increase' : 'Decrease' }} From Previous Year
+                                  {{ number_format(abs($percentage), 2) }} % {{ $percentage > 0 ? 'Increase' : 'Decrease' }} From {{ date('Y', strtotime('-1 year')) }}
                                 </span>
                             </div>
                             <!-- /.info-box-content -->
@@ -132,7 +132,7 @@
                                 </div>
 
                                 <span class="progress-description {{ $percentage < 0 ? 'text-warning' : '' }}">
-                                  {{ number_format(abs($percentage), 2) }} % {{ $percentage > 0 ? 'Increase' : 'Decrease' }} From Yesterday
+                                  {{ number_format(abs($percentage), 2) }} % {{ $percentage > 0 ? 'Increase' : 'Decrease' }} From {{ date('l', strtotime('-1 day')) }}
                                 </span>
                             </div>
                             <!-- /.info-box-content -->
@@ -156,7 +156,7 @@
                                 </div>
 
                                 <span class="progress-description {{ $percentage < 0 ? 'text-warning' : '' }}">
-                                  {{ number_format(abs($percentage), 2) }} % {{ $percentage > 0 ? 'Increase' : 'Decrease' }} From Previous Month
+                                  {{ number_format(abs($percentage), 2) }} % {{ $percentage > 0 ? 'Increase' : 'Decrease' }} From {{ date('F', strtotime('-1 month')) }}
                                 </span>
                             </div>
                             <!-- /.info-box-content -->
@@ -180,7 +180,7 @@
                                 </div>
 
                                 <span class="progress-description {{ $percentage < 0 ? 'text-warning' : '' }}">
-                                  {{ number_format(abs($percentage), 2) }} % {{ $percentage > 0 ? 'Increase' : 'Decrease' }} From Previous Year
+                                  {{ number_format(abs($percentage), 2) }} % {{ $percentage > 0 ? 'Increase' : 'Decrease' }} From {{ date('Y', strtotime('-1 year')) }}
                                 </span>
                             </div>
                             <!-- /.info-box-content -->
@@ -217,7 +217,7 @@
                                 </div>
 
                                 <span class="progress-description {{ $percentage < 0 ? 'text-success' : '' }}">
-                                  {{ number_format(abs($percentage), 2) }} % {{ $percentage > 0 ? 'Increase' : 'Decrease' }} From Yesterday
+                                  {{ number_format(abs($percentage), 2) }} % {{ $percentage > 0 ? 'Increase' : 'Decrease' }} From {{ date('l', strtotime('-1 day')) }}
                                 </span>
                             </div>
                             <!-- /.info-box-content -->
@@ -241,7 +241,7 @@
                                 </div>
 
                                 <span class="progress-description {{ $percentage < 0 ? 'text-success' : '' }}">
-                                  {{ number_format(abs($percentage), 2) }} % {{ $percentage > 0 ? 'Increase' : 'Decrease' }} From Previous Month
+                                  {{ number_format(abs($percentage), 2) }} % {{ $percentage > 0 ? 'Increase' : 'Decrease' }} From {{ date('F', strtotime('-1 month')) }}
                                 </span>
                             </div>
                             <!-- /.info-box-content -->
@@ -265,7 +265,7 @@
                                 </div>
 
                                 <span class="progress-description {{ $percentage < 0 ? 'text-success' : '' }}">
-                                  {{ number_format(abs($percentage), 2) }} % {{ $percentage > 0 ? 'Increase' : 'Decrease' }} From Previous Year
+                                  {{ number_format(abs($percentage), 2) }} % {{ $percentage > 0 ? 'Increase' : 'Decrease' }} From {{ date('Y', strtotime('-1 year')) }}
                                 </span>
                             </div>
                             <!-- /.info-box-content -->
@@ -304,7 +304,7 @@
                                 </div>
 
                                 <span class="progress-description {{ $percentage < 0 ? 'text-success' : '' }}">
-                                  {{ number_format(abs($percentage), 2) }} % {{ $percentage > 0 ? 'Increase' : 'Decrease' }} From Yesterday
+                                  {{ number_format(abs($percentage), 2) }} % {{ $percentage > 0 ? 'Increase' : 'Decrease' }} From {{ date('l', strtotime('-1 day')) }}
                                 </span>
                             </div>
                             <!-- /.info-box-content -->
@@ -328,7 +328,7 @@
                                 </div>
 
                                 <span class="progress-description {{ $percentage < 0 ? 'text-success' : '' }}">
-                                  {{ number_format(abs($percentage), 2) }} % {{ $percentage > 0 ? 'Increase' : 'Decrease' }} From Previous Month
+                                  {{ number_format(abs($percentage), 2) }} % {{ $percentage > 0 ? 'Increase' : 'Decrease' }} From {{ date('F', strtotime('-1 month')) }}
                                 </span>
                             </div>
                             <!-- /.info-box-content -->
@@ -352,7 +352,7 @@
                                 </div>
 
                                 <span class="progress-description {{ $percentage > 0 ? 'text-warning' : '' }}">
-                                  {{ number_format(abs($percentage), 2) }} % {{ $percentage > 0 ? 'Increase' : 'Decrease' }} From Previous Year
+                                  {{ number_format(abs($percentage), 2) }} % {{ $percentage > 0 ? 'Increase' : 'Decrease' }} From {{ date('Y', strtotime('-1 year')) }}
                                 </span>
                             </div>
                             <!-- /.info-box-content -->

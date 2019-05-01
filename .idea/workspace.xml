@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41f185f3-e1d6-4ef4-ad2d-c7de32da7114" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,22 +19,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/admin/dashboard.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-120">
-              <caret line="364" column="84" selection-start-line="364" selection-start-column="84" selection-end-line="364" selection-end-column="84" />
-              <folding>
-                <element signature="e#1327#1345#0#HTML" expanded="true" />
-                <element signature="e#2653#2671#0#HTML" expanded="true" />
-                <element signature="e#3689#3707#0#HTML" expanded="true" />
-                <element signature="e#5746#5764#0#HTML" expanded="true" />
-                <element signature="e#6783#6801#0#HTML" expanded="true" />
-                <element signature="e#7820#7838#0#HTML" expanded="true" />
-                <element signature="e#9877#9895#0#HTML" expanded="true" />
-                <element signature="e#10913#10931#0#HTML" expanded="true" />
-                <element signature="e#11945#11963#0#HTML" expanded="true" />
-                <element signature="e#14052#14070#0#HTML" expanded="true" />
-                <element signature="e#15104#15122#0#HTML" expanded="true" />
-                <element signature="e#16152#16170#0#HTML" expanded="true" />
-              </folding>
+            <state relative-caret-position="90">
+              <caret line="354" column="161" selection-start-line="354" selection-start-column="161" selection-end-line="354" selection-end-column="161" />
             </state>
           </provider>
         </entry>
@@ -41,7 +28,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DashboardController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
+            <state relative-caret-position="600">
               <caret line="22" column="22" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="22" />
               <folding>
                 <element signature="e#40#56#0#PHP" expanded="true" />
@@ -215,7 +202,7 @@
       <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-dompdf" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="-9" />
     <option name="y" value="21" />
     <option name="width" value="1938" />
@@ -357,7 +344,9 @@
       <workItem from="1556555265222" duration="249000" />
       <workItem from="1556555562156" duration="13822000" />
       <workItem from="1556639768845" duration="15991000" />
-      <workItem from="1556696156230" duration="10275000" />
+      <workItem from="1556696156230" duration="10377000" />
+      <workItem from="1556723971290" duration="748000" />
+      <workItem from="1556725732108" duration="934000" />
     </task>
     <task id="LOCAL-00001" summary="Update">
       <created>1555865101416</created>
@@ -370,13 +359,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="182794000" />
+    <option name="totallyTimeSpent" value="184578000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="21" width="1938" height="1068" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49836066" weight="0.14962727" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49836066" weight="0.14620188" />
       <window_info id="Structure" order="1" sideWeight="0.50163937" side_tool="true" weight="0.17944622" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -746,33 +735,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DashboardController.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/dashboard.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="22" column="22" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="22" />
-          <folding>
-            <element signature="e#40#56#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="90">
+          <caret line="354" column="161" selection-start-line="354" selection-start-column="161" selection-end-line="354" selection-end-column="161" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/dashboard.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DashboardController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-120">
-          <caret line="364" column="84" selection-start-line="364" selection-start-column="84" selection-end-line="364" selection-end-column="84" />
+        <state relative-caret-position="600">
+          <caret line="22" column="22" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="22" />
           <folding>
-            <element signature="e#1327#1345#0#HTML" expanded="true" />
-            <element signature="e#2653#2671#0#HTML" expanded="true" />
-            <element signature="e#3689#3707#0#HTML" expanded="true" />
-            <element signature="e#5746#5764#0#HTML" expanded="true" />
-            <element signature="e#6783#6801#0#HTML" expanded="true" />
-            <element signature="e#7820#7838#0#HTML" expanded="true" />
-            <element signature="e#9877#9895#0#HTML" expanded="true" />
-            <element signature="e#10913#10931#0#HTML" expanded="true" />
-            <element signature="e#11945#11963#0#HTML" expanded="true" />
-            <element signature="e#14052#14070#0#HTML" expanded="true" />
-            <element signature="e#15104#15122#0#HTML" expanded="true" />
-            <element signature="e#16152#16170#0#HTML" expanded="true" />
+            <element signature="e#40#56#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
