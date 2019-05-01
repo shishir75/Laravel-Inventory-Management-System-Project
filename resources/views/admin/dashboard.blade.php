@@ -38,7 +38,7 @@
 
                             <div class="info-box-content">
                                 <span class="info-box-text">Today's Sale</span>
-                                <span class="info-box-number">41,410</span>
+                                <span class="info-box-number">{{ $today->sum('total') }} Taka</span>
 
                                 <div class="progress">
                                     <div class="progress-bar" style="width: 70%"></div>
@@ -58,7 +58,7 @@
 
                             <div class="info-box-content">
                                 <span class="info-box-text">This Month's Sale</span>
-                                <span class="info-box-number">41,410</span>
+                                <span class="info-box-number">{{ $month->sum('total') }} Taka</span>
 
                                 <div class="progress">
                                     <div class="progress-bar" style="width: 70%"></div>
@@ -78,7 +78,7 @@
 
                             <div class="info-box-content">
                                 <span class="info-box-text">This Year's Sale</span>
-                                <span class="info-box-number">41,410</span>
+                                <span class="info-box-number">{{ $year->sum('total') }} Taka</span>
 
                                 <div class="progress">
                                     <div class="progress-bar" style="width: 70%"></div>
@@ -98,7 +98,87 @@
 
                             <div class="info-box-content">
                                 <span class="info-box-text">Total Sale</span>
-                                <span class="info-box-number">41,410</span>
+                                <span class="info-box-number">{{ $sales->sum('total') }} Taka</span>
+
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 70%"></div>
+                                </div>
+                                <span class="progress-description">
+                                  70% Increase in 30 Days
+                                </span>
+                            </div>
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-md-3 col-sm-6 col-12">
+                        <div class="info-box bg-info">
+                            <span class="info-box-icon"><i class="fa fa-bookmark-o"></i></span>
+
+                            <div class="info-box-content">
+                                <span class="info-box-text">Today's Paid</span>
+                                <span class="info-box-number">{{ $today->sum('pay') }} Taka</span>
+
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 70%"></div>
+                                </div>
+                                <span class="progress-description">
+                                  70% Increase in Yesterday
+                                </span>
+                            </div>
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-md-3 col-sm-6 col-12">
+                        <div class="info-box bg-success">
+                            <span class="info-box-icon"><i class="fa fa-thumbs-o-up"></i></span>
+
+                            <div class="info-box-content">
+                                <span class="info-box-text">This Month's Paid</span>
+                                <span class="info-box-number">{{ $month->sum('pay') }} Taka</span>
+
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 70%"></div>
+                                </div>
+                                <span class="progress-description">
+                                  70% Increase in Previous Month
+                                </span>
+                            </div>
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-md-3 col-sm-6 col-12">
+                        <div class="info-box bg-warning">
+                            <span class="info-box-icon"><i class="fa fa-calendar"></i></span>
+
+                            <div class="info-box-content">
+                                <span class="info-box-text">This Year's Paid</span>
+                                <span class="info-box-number">{{ $year->sum('pay') }} Taka</span>
+
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 70%"></div>
+                                </div>
+                                <span class="progress-description">
+                                  70% Increase in Last Year
+                                </span>
+                            </div>
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-md-3 col-sm-6 col-12">
+                        <div class="info-box bg-danger">
+                            <span class="info-box-icon"><i class="fa fa-comments-o"></i></span>
+
+                            <div class="info-box-content">
+                                <span class="info-box-text">Total Paid</span>
+                                <span class="info-box-number">{{ $sales->sum('pay') }} Taka</span>
 
                                 <div class="progress">
                                     <div class="progress-bar" style="width: 70%"></div>
@@ -118,7 +198,7 @@
 
                             <div class="info-box-content">
                                 <span class="info-box-text">Today's Due</span>
-                                <span class="info-box-number">41,410</span>
+                                <span class="info-box-number">{{ $today->sum('due') }} Taka</span>
 
                                 <div class="progress">
                                     <div class="progress-bar" style="width: 70%"></div>
@@ -138,7 +218,7 @@
 
                             <div class="info-box-content">
                                 <span class="info-box-text">This Month's Due</span>
-                                <span class="info-box-number">41,410</span>
+                                <span class="info-box-number">{{ $month->sum('due') }} Taka</span>
 
                                 <div class="progress">
                                     <div class="progress-bar" style="width: 70%"></div>
@@ -158,7 +238,7 @@
 
                             <div class="info-box-content">
                                 <span class="info-box-text">This Year's Due</span>
-                                <span class="info-box-number">41,410</span>
+                                <span class="info-box-number">{{ $year->sum('due') }} Taka</span>
 
                                 <div class="progress">
                                     <div class="progress-bar" style="width: 70%"></div>
@@ -178,7 +258,7 @@
 
                             <div class="info-box-content">
                                 <span class="info-box-text">Total Due</span>
-                                <span class="info-box-number">41,410</span>
+                                <span class="info-box-number">{{ $sales->sum('due') }} Taka</span>
 
                                 <div class="progress">
                                     <div class="progress-bar" style="width: 70%"></div>
