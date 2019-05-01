@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41f185f3-e1d6-4ef4-ad2d-c7de32da7114" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,8 +18,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/admin/dashboard.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="485">
-              <caret line="95" column="143" selection-start-line="95" selection-start-column="143" selection-end-line="95" selection-end-column="143" />
+            <state relative-caret-position="365">
+              <caret line="229" column="113" selection-start-line="229" selection-start-column="113" selection-end-line="229" selection-end-column="113" />
               <folding>
                 <element signature="e#1327#1345#0#HTML" expanded="true" />
                 <element signature="e#2653#2671#0#HTML" expanded="true" />
@@ -30,7 +29,6 @@
                 <element signature="e#6783#6801#0#HTML" expanded="true" />
                 <element signature="e#7820#7838#0#HTML" expanded="true" />
                 <element signature="e#8849#8867#0#HTML" expanded="true" />
-                <element signature="e#9877#9895#0#HTML" expanded="true" />
                 <element signature="e#10913#10931#0#HTML" expanded="true" />
                 <element signature="e#11945#11963#0#HTML" expanded="true" />
                 <element signature="e#12973#12991#0#HTML" expanded="true" />
@@ -362,7 +360,7 @@
       <workItem from="1556555265222" duration="249000" />
       <workItem from="1556555562156" duration="13822000" />
       <workItem from="1556639768845" duration="15991000" />
-      <workItem from="1556696156230" duration="8465000" />
+      <workItem from="1556696156230" duration="9054000" />
     </task>
     <task id="LOCAL-00001" summary="Update">
       <created>1555865101416</created>
@@ -375,7 +373,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="180984000" />
+    <option name="totallyTimeSpent" value="181573000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="21" width="1938" height="1068" extended-state="0" />
@@ -763,8 +761,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/dashboard.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="485">
-          <caret line="95" column="143" selection-start-line="95" selection-start-column="143" selection-end-line="95" selection-end-column="143" />
+        <state relative-caret-position="365">
+          <caret line="229" column="113" selection-start-line="229" selection-start-column="113" selection-end-line="229" selection-end-column="113" />
           <folding>
             <element signature="e#1327#1345#0#HTML" expanded="true" />
             <element signature="e#2653#2671#0#HTML" expanded="true" />
@@ -774,7 +772,6 @@
             <element signature="e#6783#6801#0#HTML" expanded="true" />
             <element signature="e#7820#7838#0#HTML" expanded="true" />
             <element signature="e#8849#8867#0#HTML" expanded="true" />
-            <element signature="e#9877#9895#0#HTML" expanded="true" />
             <element signature="e#10913#10931#0#HTML" expanded="true" />
             <element signature="e#11945#11963#0#HTML" expanded="true" />
             <element signature="e#12973#12991#0#HTML" expanded="true" />
