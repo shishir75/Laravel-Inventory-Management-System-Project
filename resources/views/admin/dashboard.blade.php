@@ -41,7 +41,14 @@
                                 <span class="info-box-number">{{ $today->sum('total') }} Taka</span>
 
                                 @php
-                                    $percentage = (($today->sum('total') - $yesterday->sum('total'))/ $yesterday->sum('total'))*100;
+
+                                    if ($yesterday->sum('total') != 0)
+                                    {
+                                        $percentage = (($today->sum('total') - $yesterday->sum('total'))/ $yesterday->sum('total'))*100;
+                                    } else {
+                                        $percentage = 0;
+                                    }
+
                                 @endphp
 
                                 <div class="progress">
@@ -65,7 +72,14 @@
                                 <span class="info-box-text">This Month's Sale</span>
                                 <span class="info-box-number">{{ $month->sum('total') }} Taka</span>
                                 @php
-                                    $percentage = (($month->sum('total') - $previous_month->sum('total'))/ $previous_month->sum('total'))*100;
+
+                                    if ($previous_month->sum('total') != 0)
+                                    {
+                                        $percentage = (($month->sum('total') - $previous_month->sum('total'))/ $previous_month->sum('total'))*100;
+                                    } else {
+                                        $percentage = 0;
+                                    }
+
                                 @endphp
 
                                 <div class="progress">
@@ -88,7 +102,13 @@
                                 <span class="info-box-text">This Year's Sale</span>
                                 <span class="info-box-number">{{ $year->sum('total') }} Taka</span>
                                 @php
-                                    $percentage = (($year->sum('total') - $previous_year->sum('total'))/ $previous_year->sum('total'))*100;
+
+                                    if($previous_year->sum('total') != 0)
+                                    {
+                                        $percentage = (($year->sum('total') - $previous_year->sum('total'))/ $previous_year->sum('total'))*100;
+                                    } else {
+                                        $percentage = 0;
+                                    }
                                 @endphp
 
                                 <div class="progress">
@@ -124,7 +144,14 @@
                                 <span class="info-box-text">Today's Paid</span>
                                 <span class="info-box-number">{{ $today->sum('pay') }} Taka</span>
                                 @php
-                                    $percentage = (($today->sum('pay') - $yesterday->sum('pay'))/ $yesterday->sum('pay'))*100;
+
+                                    if($yesterday->sum('pay') != 0)
+                                    {
+                                        $percentage = (($today->sum('pay') - $yesterday->sum('pay'))/ $yesterday->sum('pay'))*100;
+                                    } else {
+                                        $percentage = 0;
+                                    }
+
                                 @endphp
 
                                 <div class="progress">
@@ -148,7 +175,13 @@
                                 <span class="info-box-text">This Month's Paid</span>
                                 <span class="info-box-number">{{ $month->sum('pay') }} Taka</span>
                                 @php
-                                    $percentage = (($month->sum('pay') - $previous_month->sum('pay'))/ $previous_month->sum('pay'))*100;
+                                    if($previous_month->sum('pay') != 0)
+                                    {
+                                        $percentage = (($month->sum('pay') - $previous_month->sum('pay'))/ $previous_month->sum('pay'))*100;
+                                    } else {
+                                        $percentage = 0;
+                                    }
+
                                 @endphp
 
                                 <div class="progress">
@@ -172,7 +205,15 @@
                                 <span class="info-box-text">This Year's Paid</span>
                                 <span class="info-box-number">{{ $year->sum('pay') }} Taka</span>
                                 @php
-                                    $percentage = (($year->sum('pay') - $previous_year->sum('pay'))/ $previous_year->sum('pay'))*100;
+
+                                    if($previous_month->sum('pay') != 0)
+                                    {
+                                        $percentage = (($year->sum('pay') - $previous_year->sum('pay'))/ $previous_year->sum('pay'))*100;
+                                    } else {
+                                        $percentage = 0;
+                                    }
+
+
                                 @endphp
 
                                 <div class="progress">
@@ -209,7 +250,14 @@
                                 <span class="info-box-text">Today's Due</span>
                                 <span class="info-box-number">{{ $today->sum('due') }} Taka</span>
                                 @php
-                                    $percentage = (($today->sum('due') - $yesterday->sum('due'))/ $yesterday->sum('due'))*100;
+
+                                    if($yesterday->sum('due') != 0)
+                                    {
+                                        $percentage = (($today->sum('due') - $yesterday->sum('due'))/ $yesterday->sum('due'))*100;
+                                    } else {
+                                        $percentage = 0;
+                                    }
+
                                 @endphp
 
                                 <div class="progress">
@@ -233,7 +281,15 @@
                                 <span class="info-box-text">This Month's Due</span>
                                 <span class="info-box-number">{{ $month->sum('due') }} Taka</span>
                                 @php
-                                    $percentage = (($month->sum('due') - $previous_month->sum('due'))/ $previous_month->sum('due'))*100;
+
+                                    if($previous_month->sum('due') != 0)
+                                    {
+                                        $percentage = (($month->sum('due') - $previous_month->sum('due'))/ $previous_month->sum('due'))*100;
+                                    } else {
+                                        $percentage = 0;
+                                    }
+
+
                                 @endphp
 
                                 <div class="progress">
@@ -257,7 +313,12 @@
                                 <span class="info-box-text">This Year's Due</span>
                                 <span class="info-box-number">{{ $year->sum('due') }} Taka</span>
                                 @php
-                                    $percentage = (($year->sum('due') - $previous_year->sum('due'))/ $previous_year->sum('due'))*100;
+                                    if($previous_year->sum('due') != 0)
+                                    {
+                                        $percentage = (($year->sum('due') - $previous_year->sum('due'))/ $previous_year->sum('due'))*100;
+                                    } else {
+                                        $percentage = 0;
+                                    }
                                 @endphp
 
                                 <div class="progress">
@@ -296,7 +357,13 @@
                                 <span class="info-box-number">{{ $today_expenses->sum('amount') }} Taka</span>
 
                                 @php
-                                    $percentage = (($today_expenses->sum('amount') - $yesterday_expenses->sum('amount'))/ $yesterday_expenses->sum('amount'))*100;
+
+                                    if($yesterday_expenses->sum('amount') != 0)
+                                    {
+                                        $percentage = (($today_expenses->sum('amount') - $yesterday_expenses->sum('amount'))/ $yesterday_expenses->sum('amount'))*100;
+                                    } else {
+                                        $percentage = 0;
+                                    }
                                 @endphp
 
                                 <div class="progress">
@@ -320,7 +387,14 @@
                                 <span class="info-box-text">This Month's Expenses</span>
                                 <span class="info-box-number">{{ $month_expenses->sum('amount') }} Taka</span>
                                 @php
-                                    $percentage = (($today_expenses->sum('amount') - $yesterday_expenses->sum('amount'))/ $yesterday_expenses->sum('amount'))*100;
+                                    if($yesterday_expenses->sum('amount') != 0)
+                                    {
+                                        $percentage = (($today_expenses->sum('amount') - $yesterday_expenses->sum('amount'))/ $yesterday_expenses->sum('amount'))*100;
+                                    } else {
+                                        $percentage = 0;
+                                    }
+
+
                                 @endphp
 
                                 <div class="progress">
@@ -344,7 +418,12 @@
                                 <span class="info-box-text">This Year's Expenses</span>
                                 <span class="info-box-number">{{ $year_expenses->sum('amount') }} Taka</span>
                                 @php
-                                    $percentage = (($year_expenses->sum('amount') - $previous_year_expenses->sum('amount'))/ $previous_year_expenses->sum('amount'))*100;
+                                    if($previous_year_expenses->sum('amount') != 0)
+                                    {
+                                        $percentage = (($year_expenses->sum('amount') - $previous_year_expenses->sum('amount'))/ $previous_year_expenses->sum('amount'))*100;
+                                    } else {
+                                        $percentage = 0;
+                                    }
                                 @endphp
 
                                 <div class="progress">
